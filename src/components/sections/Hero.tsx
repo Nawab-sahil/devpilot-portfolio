@@ -24,7 +24,6 @@ export function Hero() {
       y: 0,
       transition: {
         duration: 0.8,
-        ease: 'easeOut',
       },
     },
   };
@@ -82,7 +81,7 @@ export function Hero() {
           variants={itemVariants}
           className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
         >
-          Hi, I'm a{' '}
+          Hi, I&apos;m a{' '}
           <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-pulse">
             Full Stack Developer
           </span>

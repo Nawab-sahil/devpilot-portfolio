@@ -2,7 +2,7 @@
 
 import { Project } from '@/types';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
+import { Code2, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -117,7 +117,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
               rel="noopener noreferrer"
               className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg border border-gray-700 text-gray-300 hover:text-white hover:border-cyan-500 hover:bg-cyan-500/10 transition-all duration-200 text-sm font-medium"
             >
-              <Github className="w-4 h-4" />
+              <Code2 className="w-4 h-4" />
               Code
             </a>
             <Link

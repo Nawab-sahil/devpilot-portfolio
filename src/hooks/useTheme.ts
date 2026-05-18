@@ -1,30 +1,16 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useTheme as useNextTheme } from 'next-themes';
 
 export function useTheme() {
-  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-    const stored = localStorage.getItem('theme') as 'light' | 'dark' | null;
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initialTheme = stored || (prefersDark ? 'dark' : 'light');
-    setTheme(initialTheme);
-    document.documentElement.classList.toggle('dark', initialTheme === 'dark');
-  }, []);
+  const { theme, setTheme } = useNextTheme();
 
   const toggleTheme = () => {
-    setTheme((prev) => {
-      const newTheme = prev === 'dark' ? 'light' : 'dark';
-      localStorage.setItem('theme', newTheme);
-      document.documentElement.classList.toggle('dark', newTheme === 'dark');
-      return newTheme;
-    });
+    setTheme(theme === 'dark' ? 'light' : 'dark');
   };
 
-  return { theme, toggleTheme, mounted };
+  return { theme, toggleTheme };
 }
 
 export function useScrolled() {

@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { ProjectCard } from '@/components/ui/ProjectCard';
 import { projects } from '@/data/projects';
-import { useState } from 'react';
 
 export const metadata: Metadata = {
   title: 'Projects | DevPortfolio',

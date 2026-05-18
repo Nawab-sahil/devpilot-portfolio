@@ -1,11 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github, Users, Zap } from 'lucide-react';
+import { Code2, Users, Zap } from 'lucide-react';
 
 const stats = [
   {
-    icon: Github,
+    icon: Code2,
     label: 'Public Repos',
     value: '50+',
     color: 'from-cyan-500 to-blue-600',
@@ -121,7 +121,7 @@ export function GitHubStats() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-cyan-500/50 text-white font-semibold hover:bg-cyan-500/10 transition-all duration-300"
           >
-            <Github className="w-5 h-5" />
+            <Code2 className="w-5 h-5" />
             Visit My GitHub
           </a>
         </motion.div>

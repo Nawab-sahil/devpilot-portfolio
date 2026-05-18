@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { projects } from '@/data/projects';
 import { notFound } from 'next/navigation';
-import { ExternalLink, Github } from 'lucide-react';
+import { Code2, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -14,9 +14,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const project = projects.find((p) => p.slug === params.slug);
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
     return {
@@ -30,8 +31,9 @@ export async function generateMetadata({
   };
 }
 
-export default function ProjectDetail({ params }: { params: { slug: string } }) {
-  const project = projects.find((p) => p.slug === params.slug);
+export default async function ProjectDetail({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
     notFound();
@@ -114,7 +116,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
                   rel="noopener noreferrer"
                   className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-gray-700 text-white hover:border-cyan-500 hover:bg-cyan-500/10 transition-all duration-200 font-medium"
                 >
-                  <Github className="w-5 h-5" />
+                  <Code2 className="w-5 h-5" />
                   View Code
                 </a>
                 <a

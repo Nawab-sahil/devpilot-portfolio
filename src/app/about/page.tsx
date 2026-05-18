@@ -20,7 +20,7 @@ export default function About() {
                 About <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Me</span>
               </h1>
               <p className="text-lg text-gray-300 mb-4">
-                I'm a passionate Full Stack Developer currently pursuing my MCA (Master of Computer Applications), 
+                I&apos;m a passionate Full Stack Developer currently pursuing my MCA (Master of Computer Applications), 
                 with a deep interest in modern web technologies, DevOps, cloud infrastructure, and AI integration.
               </p>
               <p className="text-lg text-gray-300 mb-4">
@@ -28,7 +28,7 @@ export default function About() {
                 solutions. I love exploring new technologies and applying them to solve real-world problems.
               </p>
               <p className="text-lg text-gray-300">
-                When I'm not coding, you'll find me exploring new DevOps tools, contributing to open-source projects, 
+                When I&apos;m not coding, you&apos;ll find me exploring new DevOps tools, contributing to open-source projects, 
                 or writing technical articles to share knowledge with the community.
               </p>
             </div>

@@ -1,14 +1,15 @@
 'use client';
 
 import { socialLinks } from '@/data/content';
-import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
+import { Code2, Link2, Mail, X } from 'lucide-react';
 import Link from 'next/link';
+import type { LucideIcon } from 'lucide-react';
 
-const iconMap = {
-  Github,
-  Linkedin,
-  Twitter,
-  Mail,
+const iconMap: Record<string, LucideIcon> = {
+  Github: Code2,
+  Linkedin: Link2,
+  Twitter: X,
+  Mail: Mail,
 };
 
 export function Footer() {

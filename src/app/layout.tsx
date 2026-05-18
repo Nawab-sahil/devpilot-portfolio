@@ -1,16 +1,17 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Inter, Fira_Code } from 'next/font/google';
 import { Footer } from '@/components/layout/Footer';
 import { Navbar } from '@/components/layout/Navbar';
+import { ThemeProvider } from '@/components/theme-provider';
 import './globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const inter = Inter({
+  variable: '--font-inter',
   subsets: ['latin'],
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const firaCode = Fira_Code({
+  variable: '--font-fira-code',
   subsets: ['latin'],
 });
 
@@ -52,17 +53,19 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} scroll-smooth`}
+      className={`${inter.variable} ${firaCode.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#0f172a" />
       </head>
-      <body className="min-h-screen flex flex-col bg-gray-950 text-white dark">
-        <Navbar />
-        <main className="flex-1 pt-16">{children}</main>
-        <Footer />
+      <body className="min-h-screen flex flex-col bg-background text-foreground antialiased">
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          <Navbar />
+          <main className="flex-1 pt-16">{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

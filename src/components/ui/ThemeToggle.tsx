@@ -2,13 +2,12 @@
 
 import { useTheme } from '@/hooks/useTheme';
 import { Moon, Sun } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export function ThemeToggle() {
-  const { theme, toggleTheme, mounted } = useTheme();
+  const { theme, toggleTheme } = useTheme();
   const [isHovered, setIsHovered] = useState(false);
-
-  if (!mounted) return null;
+  const currentTheme = theme === 'light' ? 'light' : 'dark';
 
   return (
     <button
@@ -19,7 +18,7 @@ export function ThemeToggle() {
       aria-label="Toggle theme"
     >
       <div className="relative w-5 h-5">
-        {theme === 'dark' ? (
+        {currentTheme === 'dark' ? (
           <Sun
             className="w-5 h-5 text-yellow-400 transition-all duration-300"
             style={{

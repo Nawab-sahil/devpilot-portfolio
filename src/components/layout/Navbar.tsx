@@ -1,10 +1,11 @@
 'use client';
 
 import { useScrolled } from '@/hooks/useTheme';
+import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import { ThemeToggle } from './ThemeToggle';
+import { useState } from 'react';
+import { ThemeToggle } from '@/components/ui/ThemeToggle';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -18,13 +19,6 @@ const navLinks = [
 export function Navbar() {
   const isScrolled = useScrolled();
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
 
   return (
     <nav
@@ -65,12 +59,9 @@ export function Navbar() {
           {/* Right side - Theme toggle and Resume CTA */}
           <div className="flex items-center space-x-4">
             <ThemeToggle />
-            <a
-              href="/resume"
-              className="hidden sm:inline-flex px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 text-sm"
-            >
-              Resume
-            </a>
+            <Button asChild className="hidden sm:inline-flex px-4 py-2 text-sm">
+              <Link href="/resume">Resume</Link>
+            </Button>
 
             {/* Mobile menu button */}
             <button
@@ -100,12 +91,11 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <a
-                href="/resume"
-                className="block w-full mt-4 px-3 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium text-center transition-all duration-300"
-              >
-                Download Resume
-              </a>
+              <Button asChild className="block w-full mt-4">
+                <Link href="/resume" onClick={() => setIsMobileOpen(false)}>
+                  Download Resume
+                </Link>
+              </Button>
             </div>
           </div>
         )}
