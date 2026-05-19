@@ -3,54 +3,30 @@
 import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import { projects } from "@/data/portfolio";
-import Link from "next/link";
-
-const list = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.1 } },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 14 },
-  show: { opacity: 1, y: 0 },
-};
 
 type ProjectGridProps = {
   featuredOnly?: boolean;
 };
 
 export default function ProjectGrid({ featuredOnly = false }: ProjectGridProps) {
-  let visible = [] as typeof projects;
-
-  if (featuredOnly) {
-    visible = projects.filter((p) => p.featured).slice(0, 4);
-  } else {
-    // show exactly 4 cards with 2 featured highlighted
-    const featured = projects.filter((p) => p.featured).slice(0, 2);
-    const nonFeatured = projects.filter((p) => !p.featured).slice(0, 2);
-    visible = [...featured, ...nonFeatured].slice(0, 4);
-  }
+  const visible = featuredOnly ? projects.slice(0, 4) : projects.slice(0, 4);
 
   return (
-    <section className="px-[28px] py-[44px]">
+    <section className="pt-0">
       <motion.div
-        variants={list}
-        initial="hidden"
-        whileInView="show"
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="grid grid-cols-2 gap-[10px]"
+        transition={{ duration: 0.35 }}
+        className="grid grid-cols-1 gap-[10px] md:grid-cols-2"
       >
-        {visible.map((p) => (
-          <motion.div key={p.id} variants={item}>
-            <ProjectCard project={p} />
-          </motion.div>
+        {visible.map((p, index) => (
+          <ProjectCard key={p.id} project={p} index={index} />
         ))}
       </motion.div>
 
-      <div className="mt-6 text-right">
-        <Link href="/projects" className="font-mono text-[13px] text-dp-lime">
-          View All Projects →
-        </Link>
+      <div className="mt-6 text-center font-mono text-[13px] text-dp-orange">
+        View All Projects →
       </div>
     </section>
   );

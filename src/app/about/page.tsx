@@ -1,5 +1,5 @@
 import SectionHeader from "@/components/common/SectionHeader";
-import TimelineItem from "@/components/common/TimelineItem";
+import Timeline from "@/components/common/Timeline";
 import { timeline } from "@/data/portfolio";
 
 export default function AboutPage() {
@@ -37,11 +37,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="space-y-4">
-          {timeline.map((entry) => (
-            <TimelineItem key={entry.year} {...entry} />
-          ))}
-        </div>
+        <Timeline entries={timeline} className="gap-0" />
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight, Github, Globe } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import type { Project } from "@/data/portfolio";
@@ -20,37 +20,41 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
       ref={ref}
       initial={{ opacity: 0, y: 28 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.55, delay: index * 0.1, ease: "easeOut" }}
-      className="dp-panel group rounded-[28px] p-6 transition duration-300 hover:-translate-y-1 hover:border-dp-orange/40"
+      transition={{ duration: 0.5, delay: index * 0.08, ease: [0.4, 0, 0.2, 1] }}
+      className="group min-h-[193px] rounded-[14px] border border-[#2b2619] bg-[#0d0c09] p-5 transition duration-300 hover:-translate-y-0.5 hover:border-dp-orange/35"
     >
-      <div className="flex items-center justify-between gap-4">
-        <span className={`dp-chip ${project.status === "completed" ? "text-dp-teal" : "text-dp-amber"}`}>
-          <span className={`h-2 w-2 rounded-full ${project.status === "completed" ? "bg-dp-teal" : "bg-dp-amber"}`} />
+      <div className="flex items-start justify-between gap-4">
+        <span
+          className={`rounded-[4px] border px-3 py-1 font-mono text-[10px] font-medium uppercase tracking-[0.16em] ${
+            project.status === "completed"
+              ? "border-dp-teal/45 bg-dp-teal/10 text-dp-teal"
+              : "border-dp-amber/45 bg-dp-amber/10 text-dp-amber"
+          }`}
+        >
           {project.status}
         </span>
-        <span className="font-mono text-[11px] tracking-[0.3em] text-dp-text-secondary">{project.year}</span>
+        {project.featured ? <span className="font-mono text-[11px] font-medium tracking-[0.22em] text-dp-lime">featured</span> : null}
       </div>
-      <h3 className="mt-5 text-2xl font-semibold tracking-tight text-dp-text-primary transition group-hover:text-dp-orange">
+      <h3 className="mt-4 text-[18px] font-semibold leading-[1.2] text-white transition group-hover:text-dp-orange">
         {project.title}
       </h3>
-      <p className="mt-3 text-sm leading-7 text-dp-text-secondary">{project.shortDesc}</p>
-      <p className="mt-4 text-sm leading-7 text-dp-text-dark">{project.fullDesc}</p>
-      <div className="mt-5 flex flex-wrap gap-2">
+      <p className="mt-3 max-w-[31ch] text-[13px] leading-6 text-dp-text-dark">{project.shortDesc}</p>
+      <div className="mt-4 flex flex-wrap gap-2">
         {project.tags.map((tag) => (
-          <span key={tag} className="rounded-full border border-dp-border-secondary bg-dp-bg-3 px-3 py-1 font-mono text-[11px] text-dp-text-secondary">
+          <span key={tag} className="rounded-[3px] border border-[#3a3324] bg-[#14120e] px-2.5 py-1 font-mono text-[10px] text-dp-text-secondary">
             {tag}
           </span>
         ))}
       </div>
-      <div className="mt-6 flex items-center gap-3">
-        <Link href={project.live} target="_blank" className="inline-flex items-center gap-2 rounded-full bg-dp-lime px-4 py-2 text-sm font-medium text-black transition hover:bg-white">
-          Live <Globe size={16} />
+      <div className="mt-5 flex flex-wrap items-center gap-2 text-[11px]">
+        <Link href={project.github} target="_blank" className="inline-flex items-center rounded-[4px] border border-[#3a3324] px-3 py-2 text-dp-text-secondary transition hover:border-dp-orange hover:text-dp-orange">
+          GitHub
         </Link>
-        <Link href={project.github} target="_blank" className="inline-flex items-center gap-2 rounded-full border border-dp-border-secondary px-4 py-2 text-sm font-medium text-dp-text-primary transition hover:border-dp-orange hover:text-dp-orange">
-          Code <Github size={16} />
+        <Link href={project.live} target="_blank" className="inline-flex items-center rounded-[4px] border border-[#3a3324] px-3 py-2 text-dp-text-secondary transition hover:border-dp-orange hover:text-dp-orange">
+          Live Demo
         </Link>
-        <span className="ml-auto inline-flex items-center gap-1 text-sm text-dp-text-secondary">
-          <ArrowUpRight size={16} />
+        <span className="inline-flex items-center rounded-[4px] border border-[#3a3324] px-3 py-2 text-dp-text-secondary transition hover:border-dp-orange hover:text-dp-orange">
+          Details <ArrowUpRight size={14} />
         </span>
       </div>
     </motion.article>

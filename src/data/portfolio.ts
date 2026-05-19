@@ -25,23 +25,13 @@ export type TimelineEntry = {
   subtitle: string;
 };
 
-export type BlogPost = {
-  slug: string;
-  title: string;
-  excerpt: string;
-  tags: string[];
-  date: string;
-  readTime: string;
-};
-
 export const projects: Project[] = [
   {
     id: 1,
     slug: "devops-dashboard",
     title: "DevOps Deployment Dashboard",
-    shortDesc: "Real-time visibility for Docker, Kubernetes, and CI/CD pipeline health.",
-    fullDesc:
-      "A command-center style dashboard that tracks deployments, rollout status, and infrastructure signals with a dense but readable UI.",
+    shortDesc: "Real-time tracking of Docker, Kubernetes & CI/CD pipelines with live health metrics and alert system.",
+    fullDesc: "Monitoring dashboard for deployment health, rollout signals, and infrastructure visibility.",
     tags: ["Next.js", "TypeScript", "Docker", "Tailwind"],
     status: "completed",
     featured: true,
@@ -52,12 +42,11 @@ export const projects: Project[] = [
   },
   {
     id: 2,
-    slug: "fintech-ops",
-    title: "Fintech Ops Console",
-    shortDesc: "Ops workflows for transaction reviews, alerts, and support escalation.",
-    fullDesc:
-      "A secure operations workspace built for support teams to prioritize issues, monitor alerts, and inspect transaction flows.",
-    tags: ["React", "Node.js", "PostgreSQL", "Redis"],
+    slug: "smart-resume-analyzer",
+    title: "Smart Resume Analyzer",
+    shortDesc: "AI-powered resume scoring with keyword analysis, ATS simulation, and improvement suggestions.",
+    fullDesc: "Resume intelligence tool for keyword analysis, ATS feedback, and actionable improvements.",
+    tags: ["Node.js", "MongoDB", "React", "NLP"],
     status: "completed",
     featured: true,
     github: "https://github.com/",
@@ -67,12 +56,11 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    slug: "ai-notes",
-    title: "AI Notes Workspace",
-    shortDesc: "Fast note capture with semantic search and compact knowledge cards.",
-    fullDesc:
-      "A writer-focused workspace combining lightweight note taking, semantic retrieval, and a clean content hierarchy.",
-    tags: ["Next.js", "OpenAI", "Prisma", "Supabase"],
+    slug: "ecommerce-platform",
+    title: "E-Commerce Platform",
+    shortDesc: "Full MERN stack shopping platform with Redux state, Stripe payments, and admin dashboard.",
+    fullDesc: "Shopping platform with product flow, cart state, Stripe payments, and admin management.",
+    tags: ["React", "Redux", "Node.js", "Stripe"],
     status: "in-progress",
     featured: false,
     github: "https://github.com/",
@@ -82,12 +70,11 @@ export const projects: Project[] = [
   },
   {
     id: 4,
-    slug: "commerce-portal",
-    title: "Commerce Admin Portal",
-    shortDesc: "Inventory, orders, and fulfillment monitoring in one operator view.",
-    fullDesc:
-      "A retailer-facing platform designed for staff to manage stock, order queues, and fulfillment priorities without switching tools.",
-    tags: ["TypeScript", "Tailwind", "Stripe", "PostgreSQL"],
+    slug: "atm-system-java-oop",
+    title: "ATM System — Java OOP",
+    shortDesc: "Console-based ATM simulation with full OOP design — account management, transactions, PIN auth.",
+    fullDesc: "Java OOP console system for account management, authentication, deposits, and withdrawals.",
+    tags: ["Java", "OOP", "CLI"],
     status: "completed",
     featured: true,
     github: "https://github.com/",
@@ -169,57 +156,23 @@ export const skills: SkillCategory[] = [
 export const timeline: TimelineEntry[] = [
   {
     year: "2024 — Now",
-    title: "MCA — Masters in Computer Applications",
-    subtitle: "DDU Nadiad, Gujarat · Full-Stack & Cloud focus",
+    title: "MCA at DDU",
+    subtitle: "Full-stack and cloud-focused study in Gujarat.",
   },
   {
     year: "2023",
-    title: "Built production-style dashboards",
-    subtitle: "Worked on operator tooling, analytics views, and deploy observability.",
+    title: "First Next.js app deployed",
+    subtitle: "Shipped a production-ready app and learned the deployment workflow.",
   },
   {
     year: "2022",
-    title: "Frontend systems and UI engineering",
-    subtitle: "Expanded into reusable component systems and motion-first interfaces.",
+    title: "BCA graduation",
+    subtitle: "Built a stronger foundation in programming and application development.",
   },
   {
     year: "2021",
-    title: "Started shipping with JavaScript",
-    subtitle: "Focused on fundamentals, problem solving, and clean implementation habits.",
+    title: "First line of code",
+    subtitle: "Started learning JavaScript and the basics of building software.",
   },
 ];
 
-export const blog: BlogPost[] = [
-  {
-    slug: "first-mern-app",
-    title: "What I Learned Building My First MERN App",
-    excerpt: "The jump from tutorials to a deployed product changes how you think about architecture and feedback loops.",
-    tags: ["MERN", "React"],
-    date: "Jan 2025",
-    readTime: "6 min read",
-  },
-  {
-    slug: "ui-motion-not-overkill",
-    title: "Why Motion Should Clarify, Not Decorate",
-    excerpt: "Small, well-timed transitions can make dense interfaces feel obvious instead of noisy.",
-    tags: ["Motion", "UX"],
-    date: "Feb 2025",
-    readTime: "4 min read",
-  },
-  {
-    slug: "building-for-speed",
-    title: "A Practical Approach to Fast Frontends",
-    excerpt: "A fast UI is mostly a product of disciplined boundaries, not clever tricks.",
-    tags: ["Performance", "Next.js"],
-    date: "Mar 2025",
-    readTime: "5 min read",
-  },
-  {
-    slug: "from-api-to-dashboard",
-    title: "Designing APIs for Dashboards",
-    excerpt: "Good dashboards start with data that is already structured around user decisions.",
-    tags: ["APIs", "Data"],
-    date: "Apr 2025",
-    readTime: "7 min read",
-  },
-];

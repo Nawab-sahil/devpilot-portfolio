@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Download } from "lucide-react";
 import SectionHeader from "@/components/common/SectionHeader";
-import TimelineItem from "@/components/common/TimelineItem";
+import Timeline from "@/components/common/Timeline";
 import { timeline } from "@/data/portfolio";
 
 export default function ResumePage() {
@@ -10,11 +10,7 @@ export default function ResumePage() {
       <SectionHeader label="RESUME" title="Experience timeline and highlights" count="PDF READY" />
 
       <div className="grid gap-8 lg:grid-cols-[1fr_0.72fr]">
-        <div className="space-y-4">
-          {timeline.map((entry) => (
-            <TimelineItem key={entry.year} {...entry} />
-          ))}
-        </div>
+        <Timeline entries={timeline} className="gap-0" />
 
         <aside className="dp-panel rounded-[32px] p-6">
           <div className="font-mono text-[11px] tracking-[0.34em] text-dp-text-secondary">DOWNLOAD</div>
