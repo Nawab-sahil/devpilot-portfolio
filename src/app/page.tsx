@@ -1,5 +1,5 @@
 import Hero from "@/components/sections/Hero";
-import ProjectGrid from "@/components/sections/ProjectGrid";
+import ProjectGrid from "@/components/projects/ProjectGrid";
 import SectionHeader from "@/components/common/SectionHeader";
 import Terminal from "@/components/sections/Terminal";
 import { projects } from "@/data/portfolio";
