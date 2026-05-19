@@ -47,12 +47,16 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
         ))}
       </div>
       <div className="mt-5 flex flex-wrap items-center gap-2 text-[11px]">
-        <Link href={project.github} target="_blank" className="inline-flex items-center rounded-[4px] border border-[#3a3324] px-3 py-2 text-dp-text-secondary transition hover:border-dp-orange hover:text-dp-orange">
-          GitHub
-        </Link>
-        <Link href={project.live} target="_blank" className="inline-flex items-center rounded-[4px] border border-[#3a3324] px-3 py-2 text-dp-text-secondary transition hover:border-dp-orange hover:text-dp-orange">
-          Live Demo
-        </Link>
+        {project.github ? (
+          <Link href={project.github} target="_blank" className="inline-flex items-center rounded-[4px] border border-[#3a3324] px-3 py-2 text-dp-text-secondary transition hover:border-dp-orange hover:text-dp-orange">
+            GitHub
+          </Link>
+        ) : null}
+        {project.live ? (
+          <Link href={project.live} target="_blank" className="inline-flex items-center rounded-[4px] border border-[#3a3324] px-3 py-2 text-dp-text-secondary transition hover:border-dp-orange hover:text-dp-orange">
+            Live Demo
+          </Link>
+        ) : null}
         <span className="inline-flex items-center rounded-[4px] border border-[#3a3324] px-3 py-2 text-dp-text-secondary transition hover:border-dp-orange hover:text-dp-orange">
           Details <ArrowUpRight size={14} />
         </span>

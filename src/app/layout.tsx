@@ -18,17 +18,18 @@ const jetbrains = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Sahil — Full-Stack Developer & MCA Student',
-  description: 'DevPilot Portfolio. MERN Stack developer from Gujarat. Open to remote roles and freelance.',
+  title: 'Nawab Sahil — WordPress Expert, PHP & Java Developer',
+  description: 'Portfolio of Nawab Sahil from Jamnagar, Gujarat. MCA at DDU Nadiad, BCA at Saurashtra University, building SEO-friendly WordPress, PHP, Java, ASP.NET, and DevOps projects.',
+  keywords: ['Nawab Sahil', 'WordPress Expert', 'PHP Developer', 'Java Developer', 'ASP.NET', 'SEO', 'Jamnagar', 'Gujarat', 'MCA', 'Saurashtra University'],
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://sahil.dev',
-    siteName: 'Sahil — DevPilot',
+    siteName: 'Nawab Sahil — Portfolio',
     images: [
       {
         url: 'https://sahil.dev/og-image.svg',
-        alt: 'Sahil — Full-Stack Developer',
+        alt: 'Nawab Sahil — WordPress Expert and Full Stack Developer',
       },
     ],
   },
@@ -37,8 +38,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sahil — Full-Stack Developer',
-    description: 'MERN Stack. Next.js. Cloud.',
+    title: 'Nawab Sahil — WordPress Expert & PHP Developer',
+    description: 'SEO-first WordPress, PHP, Java, ASP.NET, and DevOps projects from Jamnagar, Gujarat.',
   },
   robots: {
     index: true,
@@ -57,8 +58,9 @@ export default function RootLayout({
     name: "Nawab Sahil",
     url: "https://sahil.dev",
     image: "https://sahil.dev/og-image.svg",
-    jobTitle: "Full-Stack Developer",
+    jobTitle: "WordPress Expert & Full-Stack Developer",
     alumniOf: "DDU Nadiad",
+    knowsAbout: ["WordPress", "PHP", "Java", "ASP.NET", "SEO", "DevOps", "Google Ads"],
     address: {
       "@type": "PostalAddress",
       addressLocality: "Jamnagar",
@@ -70,7 +72,7 @@ export default function RootLayout({
       "https://leetcode.com/u/nawabsahil/",
       "https://www.linkedin.com/in/sahil-nawab"
     ],
-    description: "MERN Stack developer from Gujarat. Open to remote roles and freelance. Currently pursuing MCA at DDU Nadiad.",
+    description: "WordPress Expert and Full Stack Developer from Jamnagar, Gujarat. MCA at DDU Nadiad with a BCA foundation from Saurashtra University.",
   };
 
   return (

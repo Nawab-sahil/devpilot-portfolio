@@ -3,12 +3,13 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Terminal from "./Terminal";
+import { profile } from "@/data/portfolio";
 
 const roles = [
-  "MERN Stack Developer",
-  "Next.js Engineer",
-  "Cloud Learner",
-  "Open Source Builder",
+  "WordPress Expert",
+  "PHP & Java Builder",
+  "SEO-Focused Developer",
+  "DevOps Learner",
 ];
 
 export default function Hero() {
@@ -71,16 +72,29 @@ export default function Hero() {
           <span className="ml-1 inline-block h-3.5 w-0.5 animate-pulse bg-dp-lime align-middle" />
         </motion.div>
 
+        <motion.div variants={itemVariants} className="max-w-md rounded-2xl border border-dp-border-secondary bg-dp-bg-2 px-4 py-3">
+          <div className="font-mono text-[11px] tracking-[0.26em] text-dp-text-secondary">{profile.headline}</div>
+          <div className="mt-2 text-sm leading-6 text-dp-text-secondary">{profile.subheadline}</div>
+        </motion.div>
+
         <motion.p variants={itemVariants} className="max-w-sm text-sm leading-relaxed text-dp-text-secondary">
-          MCA student at DDU Nadiad. I build modern web apps and developer tools. Passionate about clean code and cloud-native solutions.
+          {profile.summary}
         </motion.p>
+
+        <motion.div variants={itemVariants} className="flex flex-wrap gap-2">
+          {profile.focus.map((item) => (
+            <span key={item} className="rounded-full border border-dp-border-secondary bg-dp-bg-2 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-dp-text-secondary">
+              {item}
+            </span>
+          ))}
+        </motion.div>
 
         <motion.div variants={itemVariants} className="flex gap-2.5">
           <a href="#projects" className="rounded-md bg-dp-orange px-5 py-2.5 text-xs font-bold text-black transition-opacity hover:opacity-85">
             View Projects
           </a>
-          <a href="/resume.pdf" className="rounded-md border border-dp-lime/35 bg-transparent px-5 py-2.5 text-xs font-medium text-dp-lime transition-colors hover:bg-dp-lime-light">
-            Download Resume
+          <a href="/resume" className="rounded-md border border-dp-lime/35 bg-transparent px-5 py-2.5 text-xs font-medium text-dp-lime transition-colors hover:bg-dp-lime-light">
+            View Resume
           </a>
         </motion.div>
       </motion.div>

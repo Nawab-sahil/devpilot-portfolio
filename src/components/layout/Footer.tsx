@@ -1,11 +1,17 @@
 import Link from "next/link";
 import { Github, Linkedin } from "lucide-react";
 
-const links = [
-  ["GitHub", "https://github.com/Nawab-sahil/", <Github key="gh" size={14} className="inline-block align-text-bottom mr-1"/>],
-  ["LeetCode", "https://leetcode.com/u/nawabsahil/", null],
-  ["LinkedIn", "https://www.linkedin.com/in/sahil-nawab", <Linkedin key="li" size={14} className="inline-block align-text-bottom mr-1"/>],
-  ["Resume", "/resume", null],
+type FooterLink = {
+  label: string;
+  href: string;
+  icon: React.ReactNode;
+};
+
+const links: FooterLink[] = [
+  { label: "GitHub", href: "https://github.com/Nawab-sahil/", icon: <Github size={14} className="inline-block align-text-bottom mr-1" /> },
+  { label: "LeetCode", href: "https://leetcode.com/u/nawabsahil/", icon: null },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/sahil-nawab", icon: <Linkedin size={14} className="inline-block align-text-bottom mr-1" /> },
+  { label: "Resume", href: "/resume", icon: null },
 ];
 
 export default function Footer() {
@@ -17,7 +23,7 @@ export default function Footer() {
         </Link>
 
         <div className="flex flex-wrap items-center gap-4 text-[12px]">
-          {links.map(([label, href, icon]) => (
+          {links.map(({ label, href, icon }) => (
             <Link
               key={href}
               href={href}
