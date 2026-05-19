@@ -6,7 +6,7 @@ import SectionHeader from "@/components/common/SectionHeader";
 import Terminal from "@/components/sections/Terminal";
 import SkillGroup from "@/components/skills/SkillGroup";
 import Timeline from "@/components/common/Timeline";
-import { projects, skills, timeline } from "@/data/portfolio";
+import { skills, timeline } from "@/data/portfolio";
 
 export default function Home() {
   return (
@@ -18,7 +18,7 @@ export default function Home() {
       <section id="projects" className="mx-auto scroll-mt-[72px] max-w-7xl border-t border-dp-border-primary px-4 py-6 sm:px-6 lg:px-8">
         <div className="mb-8 flex items-center justify-between gap-4">
           <div className="flex items-center gap-4">
-            <div className="font-mono text-[11px] tracking-[0.36em] text-dp-orange">// PROJECTS</div>
+            <div className="font-mono text-[11px] tracking-[0.36em] text-dp-orange">{"// PROJECTS"}</div>
             <div className="h-px w-full min-w-[180px] bg-dp-border-primary" />
           </div>
           <div className="font-mono text-[11px] tracking-[0.24em] text-dp-text-secondary">06 total</div>

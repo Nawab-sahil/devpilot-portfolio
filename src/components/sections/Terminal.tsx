@@ -1,24 +1,56 @@
 export default function Terminal() {
-  const lines = [
-    ["status", "building motion-first portfolio system"],
-    ["stack", "Next.js 15 / React 19 / Tailwind v3 / Framer Motion"],
-    ["focus", "premium loader, reusable sections, route-driven content"],
-    ["note", "designed to feel sharp, dark, and editorial"],
-  ];
-
   return (
-    <div className="dp-panel rounded-[32px] p-6">
-      <div className="flex items-center justify-between border-b border-dp-border-primary pb-4">
-        <div className="font-mono text-[11px] tracking-[0.32em] text-dp-text-secondary">TERMINAL.LOG</div>
-        <div className="dp-chip text-dp-orange">ACTIVE</div>
+    <div className="overflow-hidden rounded-3xl border border-dp-border-primary bg-dp-bg-2">
+      <div className="flex items-center gap-1.5 border-b border-dp-border-primary bg-dp-bg-3 px-3.5 py-2.5">
+        <div className="h-2.5 w-2.5 rounded-full bg-dp-rose" />
+        <div className="h-2.5 w-2.5 rounded-full bg-dp-amber" />
+        <div className="h-2.5 w-2.5 rounded-full bg-dp-teal" />
+        <span className="ml-2 font-mono text-xs text-dp-text-dark">devpilot — profile.json</span>
       </div>
-      <div className="mt-5 space-y-3 font-mono text-sm leading-7 text-dp-text-primary">
-        {lines.map(([label, value]) => (
-          <div key={label} className="flex flex-col gap-1 rounded-2xl border border-dp-border-secondary bg-dp-bg-3 px-4 py-3 sm:flex-row sm:items-center sm:gap-4">
-            <span className="w-24 text-dp-text-secondary">[{label}]</span>
-            <span className="text-dp-text-primary">{value}</span>
-          </div>
-        ))}
+      <div className="p-[18px] font-mono text-xs leading-8">
+        <div className="flex gap-2">
+          <span className="text-dp-orange">~$</span>
+          <span className="text-dp-text-secondary">cat developer.json</span>
+        </div>
+
+        <div className="text-dp-lime">{`{`}</div>
+
+        <div className="pl-8 text-dp-lime">
+          <span className="text-dp-amber">&quot;name&quot;</span>
+          <span className="text-dp-lime">:</span>
+          <span className="text-dp-rose"> &quot;Sahil&quot;</span>,
+        </div>
+
+        <div className="pl-8 text-dp-lime">
+          <span className="text-dp-amber">&quot;role&quot;</span>
+          <span className="text-dp-lime">:</span>
+          <span className="text-dp-rose"> &quot;Full-Stack Developer&quot;</span>,
+        </div>
+
+        <div className="pl-8 text-dp-lime">
+          <span className="text-dp-amber">&quot;stack&quot;</span>
+          <span className="text-dp-lime">:</span>
+          <span className="text-dp-rose"> [&quot;React&quot;, &quot;Node.js&quot;, &quot;MongoDB&quot;]</span>,
+        </div>
+
+        <div className="pl-8 text-dp-lime">
+          <span className="text-dp-amber">&quot;education&quot;</span>
+          <span className="text-dp-lime">:</span>
+          <span className="text-dp-rose"> &quot;MCA @ DDU Nadiad&quot;</span>,
+        </div>
+
+        <div className="pl-8 text-dp-lime">
+          <span className="text-dp-amber">&quot;status&quot;</span>
+          <span className="text-dp-lime">:</span>
+          <span className="text-dp-teal"> &quot;Open to Work ✓&quot;</span>
+        </div>
+
+        <div className="text-dp-lime">{`}`}</div>
+
+        <div className="mt-2 flex gap-2">
+          <span className="text-dp-orange">~$</span>
+          <span className="inline-block h-3 w-0.5 animate-pulse bg-dp-orange" />
+        </div>
       </div>
     </div>
   );

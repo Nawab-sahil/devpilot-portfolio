@@ -20,8 +20,8 @@ export default function ProjectGrid({ featuredOnly = false }: ProjectGridProps) 
         transition={{ duration: 0.35 }}
         className="grid grid-cols-1 gap-[10px] md:grid-cols-2"
       >
-        {visible.map((p, index) => (
-          <ProjectCard key={p.id} project={p} index={index} />
+        {visible.map((p) => (
+          <ProjectCard key={p.id} project={p} />
         ))}
       </motion.div>
 

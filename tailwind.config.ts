@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import { colors } from './src/lib/colors'
 
 const config: Config = {
   content: [
@@ -10,33 +11,37 @@ const config: Config = {
     extend: {
       colors: {
         dp: {
-          orange: '#FF5C00',
-          'orange-dark': '#CC4800',
-          'orange-light': 'rgba(255,92,0,0.12)',
-          lime: '#C8FF00',
-          'lime-dark': '#A0CC00',
-          'lime-light': 'rgba(200,255,0,0.1)',
-          teal: '#00E5C8',
-          amber: '#FFB800',
-          rose: '#FF3D6B',
-          bg: '#060604',
-          'bg-2': '#0e0d0a',
-          'bg-3': '#161410',
-          'bg-4': '#1e1b14',
+          orange: colors.orange,
+          'orange-dark': colors.orangeDark,
+          'orange-light': colors.orangeLight,
+          lime: colors.lime,
+          'lime-dark': colors.limeDark,
+          'lime-light': colors.limeLight,
+          teal: colors.teal,
+          amber: colors.amber,
+          rose: colors.rose,
+          bg: colors.bg,
+          'bg-2': colors.bg2,
+          'bg-3': colors.bg3,
+          'bg-4': colors.bg4,
           text: {
-            primary: '#F2EDE4',
-            secondary: '#8A8070',
-            dark: '#4A4438',
+            primary: colors.t1,
+            secondary: colors.t2,
+            dark: colors.t3,
           },
           border: {
-            primary: '#252118',
-            secondary: '#332E22',
+            primary: colors.bdr,
+            secondary: colors.bdr2,
           },
         },
       },
       fontFamily: {
         sans: ['var(--font-space-grotesk)', 'system-ui'],
-        mono: ['JetBrains Mono', 'monospace'],
+        mono: ['var(--font-jetbrains-mono)', 'monospace'],
+      },
+      boxShadow: {
+        glow: '0 0 24px rgba(255, 92, 0, 0.32), 0 0 48px rgba(255, 92, 0, 0.12)',
+        lime: '0 0 24px rgba(200, 255, 0, 0.28), 0 0 48px rgba(200, 255, 0, 0.12)',
       },
     },
   },

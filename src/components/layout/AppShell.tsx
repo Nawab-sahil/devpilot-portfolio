@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { useState, type ReactNode } from "react";
+import { useCallback, useState, type ReactNode } from "react";
 import Footer from "@/components/layout/Footer";
 import Loader from "@/components/layout/Loader";
 import Navbar from "@/components/layout/Navbar";
@@ -9,20 +9,17 @@ import { ThemeProvider } from "@/components/layout/ThemeProvider";
 
 export default function AppShell({ children }: { children: ReactNode }) {
   const [contentVisible, setContentVisible] = useState(false);
-  const [navbarVisible, setNavbarVisible] = useState(false);
+  const handleLoaderComplete = useCallback(() => {
+    setContentVisible(true);
+  }, []);
 
   return (
     <ThemeProvider>
       <Loader
-        onExitComplete={() => {
-          window.setTimeout(() => {
-            setContentVisible(true);
-            setNavbarVisible(true);
-          }, 520);
-        }}
+        onComplete={handleLoaderComplete}
       />
       <div className="flex min-h-screen flex-col">
-        <Navbar isVisible={navbarVisible} />
+        <Navbar />
         <AnimatePresence>
           {contentVisible ? (
             <motion.main

@@ -2,66 +2,50 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
-const navLinks = [
-  ["Home", "/#home"],
-  ["About", "/#about"],
-  ["Projects", "/#projects"],
-  ["Skills", "/#skills"],
-  ["Blog", "/#blog"],
-  ["Contact", "/#contact"],
+const navItems = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Projects", href: "/projects" },
+  { label: "Skills", href: "/skills" },
+  { label: "Resume", href: "/resume" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
 ];
 
-export default function Navbar({ isVisible }: { isVisible: boolean }) {
-  const [activeHash, setActiveHash] = useState("home");
-
-  useEffect(() => {
-    const updateHash = () => {
-      setActiveHash(window.location.hash.replace("#", "") || "home");
-    };
-
-    updateHash();
-    window.addEventListener("hashchange", updateHash);
-    return () => window.removeEventListener("hashchange", updateHash);
-  }, []);
+export default function Navbar() {
+  const pathname = usePathname();
 
   return (
     <motion.header
-      initial={{ opacity: 0, y: -12 }}
-      animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -12 }}
-      transition={{ duration: 0.52, ease: [0.22, 1, 0.36, 1] }}
-      className="sticky top-0 z-40 h-[60px] border-b-[0.5px] border-[color:var(--border)] bg-[color:var(--bg)]"
+      initial={{ opacity: 0, y: -8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="sticky top-0 z-40 flex h-14 items-center justify-between border-b border-dp-border-primary bg-dp-bg px-7"
     >
-      <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-8">
-        <Link href="/#home" className="font-mono text-[15px] tracking-[0.5px] text-dp-cyan transition hover:text-dp-t1">
-          <span className="text-dp-t3">&lt;</span> Sahil <span className="text-dp-t3">/&gt;</span>
-        </Link>
+      <Link href="/" className="font-mono text-sm font-bold text-dp-orange">
+        &lt;<span className="text-dp-text-dark"> Sahil</span> /&gt;
+      </Link>
 
-        <nav className="hidden items-center gap-6 lg:flex">
-          {navLinks.map(([label, href]) => {
-            const sectionId = href.split("#")[1] ?? "home";
+      <nav className="hidden items-center gap-5 lg:flex">
+        {navItems.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className={pathname === item.href ? "text-sm text-dp-lime" : "text-sm text-dp-text-dark transition-colors hover:text-dp-text-primary"}
+          >
+            {item.label}
+          </Link>
+        ))}
+      </nav>
 
-            return (
-              <Link
-                key={href}
-                href={href}
-                className={[
-                  "text-[13px] transition-colors duration-200",
-                  activeHash === sectionId ? "text-dp-cyan" : "text-dp-t3 hover:text-dp-t1",
-                ].join(" ")}
-              >
-                {label}
-              </Link>
-            );
-          })}
-        </nav>
-
-        <div className="font-mono text-[11px] text-dp-green bg-[rgba(0,228,160,0.08)] border border-[rgba(0,228,160,0.25)] px-[10px] py-[4px] rounded-full flex items-center gap-2">
-          <span className="h-[5px] w-[5px] rounded-full bg-dp-green animate-pulse" />
-          Open to Work
-        </div>
-      </div>
+      <Link
+        href="/contact"
+        className="rounded-md bg-dp-orange px-[14px] py-1.5 text-xs font-bold text-black transition-opacity hover:opacity-85"
+      >
+        Hire Me
+      </Link>
     </motion.header>
   );
 }
