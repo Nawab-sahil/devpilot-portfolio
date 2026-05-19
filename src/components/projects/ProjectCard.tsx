@@ -53,7 +53,7 @@ export default function ProjectCard({ project }: { project: Project }) {
 
       <div className="mt-4 flex items-center gap-3">
         <a
-          href={project.github}
+          href={project.github ?? undefined}
           target="_blank"
           rel="noreferrer"
           className="text-[11px] border border-dp-border-secondary px-3 py-1 rounded-sm hover:text-dp-orange hover:border-dp-orange transition"
@@ -62,7 +62,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         </a>
 
         <a
-          href={project.live}
+          href={project.live ?? undefined}
           target="_blank"
           rel="noreferrer"
           className="text-[11px] border border-dp-border-secondary px-3 py-1 rounded-sm hover:text-dp-orange hover:border-dp-orange transition"
