@@ -20,7 +20,7 @@ export default function Home() {
 
       <section id="projects" className="mx-auto scroll-mt-[72px] max-w-7xl border-t border-dp-border-primary px-4 pb-10 pt-10 sm:px-6 lg:px-8">
         <div className="mb-8 flex items-center gap-4">
-          <span className="font-mono text-[11px] font-semibold tracking-[0.32em] text-dp-orange">// PROJECTS</span>
+          <span className="font-mono text-[11px] font-semibold tracking-[0.32em] text-dp-orange">{'//'} PROJECTS</span>
           <div className="h-px flex-1 bg-dp-border-primary" />
           <span className="font-mono text-[11px] text-dp-text-dark">06 total</span>
         </div>
@@ -29,7 +29,7 @@ export default function Home() {
 
       <section id="about" className="mx-auto scroll-mt-[72px] max-w-7xl border-t border-dp-border-primary px-4 pb-10 pt-10 sm:px-6 lg:px-8">
         <div className="mb-9 flex items-center gap-4">
-          <span className="font-mono text-[11px] font-semibold tracking-[0.32em] text-dp-orange">// ABOUT</span>
+          <span className="font-mono text-[11px] font-semibold tracking-[0.32em] text-dp-orange">{'//'} ABOUT</span>
           <div className="h-px flex-1 bg-dp-border-primary" />
         </div>
 
@@ -97,7 +97,7 @@ export default function Home() {
       
 
       <section id="contact" className="mx-auto scroll-mt-[72px] max-w-7xl border-t border-dp-border-primary px-4 py-10 sm:px-6 lg:px-8">
-        <SectionHeader label="CONTACT" title="Build something search-friendly" count="LET'S TALK" />
+        <SectionHeader label="CONTACT" title="Build something search-friendly" count="LET&apos;S TALK" />
 
         <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
           <motion.form
@@ -120,7 +120,7 @@ export default function Home() {
 
             <label className="mt-4 block space-y-2">
               <span className="text-sm text-dp-text-secondary">Message</span>
-              <motion.textarea whileFocus={{ scale: 1.01 }} className="min-h-40 w-full rounded-lg border border-dp-border-secondary bg-dp-bg-3 px-4 py-3 text-dp-text-primary outline-none ring-0 placeholder:text-dp-text-dark focus:border-dp-orange" placeholder="Let's build something together..." />
+              <motion.textarea whileFocus={{ scale: 1.01 }} className="min-h-40 w-full rounded-lg border border-dp-border-secondary bg-dp-bg-3 px-4 py-3 text-dp-text-primary outline-none ring-0 placeholder:text-dp-text-dark focus:border-dp-orange" placeholder="Let&apos;s build something together..." />
             </label>
 
             <motion.button
@@ -187,7 +187,7 @@ export default function Home() {
             <div className="inline-flex items-center gap-2 rounded-full bg-dp-bg-3 px-3 py-1 text-sm text-dp-teal mb-4">
               <span className="inline-block h-2 w-2 rounded-full bg-dp-teal" /> Available for work
             </div>
-            <h3 className="text-3xl font-semibold text-dp-text-primary">Let's build something great.</h3>
+            <h3 className="text-3xl font-semibold text-dp-text-primary">Let&apos;s build something great.</h3>
             <p className="mt-2 text-sm text-dp-text-secondary">Remote roles · Freelance · SEO-first client work · Product builds</p>
             <div className="mt-6 flex items-center justify-center gap-4">
               <motion.a whileHover={{ scale: 1.03 }} href="#contact" className="rounded-xl border border-dp-border-secondary bg-dp-bg-2 px-6 py-2 font-mono text-sm font-semibold text-dp-text-primary transition-colors hover:border-dp-lime hover:text-dp-lime">Get In Touch</motion.a>
