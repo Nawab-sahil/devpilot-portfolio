@@ -20,7 +20,10 @@ export default function Home() {
 
       <section id="projects" className="mx-auto scroll-mt-[72px] max-w-7xl border-t border-dp-border-primary px-4 pb-10 pt-10 sm:px-6 lg:px-8">
         <div className="mb-8 flex items-center gap-4">
-          <span className="font-mono text-[11px] font-semibold tracking-[0.32em] text-dp-orange">{String.fromCharCode(47, 47)} PROJECTS</span>
+          <span className="font-mono text-[11px] font-semibold tracking-[0.32em] text-dp-orange" aria-label="Projects">
+            <span aria-hidden="true">/</span>
+            <span aria-hidden="true">/</span> PROJECTS
+          </span>
           <div className="h-px flex-1 bg-dp-border-primary" />
           <span className="font-mono text-[11px] text-dp-text-dark">06 total</span>
         </div>
@@ -29,7 +32,10 @@ export default function Home() {
 
       <section id="about" className="mx-auto scroll-mt-[72px] max-w-7xl border-t border-dp-border-primary px-4 pb-10 pt-10 sm:px-6 lg:px-8">
         <div className="mb-9 flex items-center gap-4">
-          <span className="font-mono text-[11px] font-semibold tracking-[0.32em] text-dp-orange">{String.fromCharCode(47, 47)} ABOUT</span>
+          <span className="font-mono text-[11px] font-semibold tracking-[0.32em] text-dp-orange" aria-label="About">
+            <span aria-hidden="true">/</span>
+            <span aria-hidden="true">/</span> ABOUT
+          </span>
           <div className="h-px flex-1 bg-dp-border-primary" />
         </div>
 

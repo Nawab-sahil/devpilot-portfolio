@@ -96,9 +96,7 @@ export default function ResumePage() {
           >
             <Download size={16} /> Download Resume
           </Link>
-          <div className="mt-8 rounded-3xl border border-dp-border-secondary bg-dp-bg-3 p-5 text-sm text-dp-text-secondary">
-            Tip: place a real resume file at <span className="font-mono text-dp-lime">public/resume.pdf</span> to make the button live.
-          </div>
+
         </aside>
       </div>
     </div>
