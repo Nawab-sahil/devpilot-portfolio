@@ -1,134 +1,36 @@
-# DevPortfolio - Modern Developer Portfolio
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-A modern, responsive, and fully-featured developer portfolio website built with cutting-edge technologies.
+## Getting Started
 
-## ✨ Features
+First, run the development server:
 
-- **Modern Design**: Dark theme with glassmorphism and cyberpunk aesthetics
-- **Fully Responsive**: Mobile-first design that works on all devices
-- **Smooth Animations**: Framer Motion animations and transitions throughout
-- **Dark/Light Mode**: Theme toggle with system preference detection
-- **SEO Optimized**: Metadata configuration and semantic HTML
-- **Performance Focused**: Optimized images, lazy loading, and code splitting
-- **Accessibility**: WCAG compliant with proper ARIA labels
-- **Production Ready**: Clean architecture and best practices
-
-## 🛠️ Tech Stack
-
-### Frontend
-- **Next.js 15** - React framework with App Router
-- **TypeScript** - Type-safe development
-- **Tailwind CSS** - Utility-first styling
-- **Framer Motion** - Advanced animations
-- **Lucide React** - Beautiful SVG icons
-- **shadcn/ui** - Reusable UI components
-
-## 📁 Project Structure
-
-```
-src/
-├── app/                      # Next.js App Router pages
-│   ├── page.tsx             # Home page
-│   ├── about/page.tsx       # About page
-│   ├── projects/            # Projects section
-│   ├── skills/page.tsx      # Skills showcase
-│   ├── blog/                # Blog section
-│   ├── contact/page.tsx     # Contact form
-│   ├── resume/page.tsx      # Resume page
-│   ├── layout.tsx           # Root layout
-│   └── globals.css          # Global styles
-├── components/              # React components
-│   ├── ui/                  # Reusable UI components
-│   ├── sections/            # Page sections
-│   └── layout/              # Layout components
-├── data/                    # Static data files
-├── hooks/                   # Custom React hooks
-├── lib/                     # Utility functions
-├── types/                   # TypeScript types
-└── styles/                  # Additional styles
-```
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js 18+ 
-- npm or yarn
-
-### Installation
-
-1. Install dependencies:
-```bash
-npm install
-```
-
-2. Run the development server:
 ```bash
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## 📝 Customization
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-### Update Portfolio Content
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-1. **Personal Information** - Edit `/src/data/content.ts`
-2. **Projects** - Edit `/src/data/projects.ts`
-3. **Skills** - Edit `/src/data/skills.ts`
-4. **Blog Posts** - Edit `/src/data/blog.ts`
+## Learn More
 
-### Modify Styling
+To learn more about Next.js, take a look at the following resources:
 
-- **Colors**: Edit Tailwind config in `tailwind.config.ts`
-- **Animations**: Modify Framer Motion variants in `/src/lib/animations.ts`
-- **Global Styles**: Edit `/src/app/globals.css`
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## 📄 Pages
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-- **Home** (`/`) - Hero, featured projects, stats, timeline
-- **About** (`/about`) - Personal introduction and values
-- **Projects** (`/projects`) - All projects with filtering
-- **Skills** (`/skills`) - Grouped skills with progress bars
-- **Blog** (`/blog`) - Blog posts with categories
-- **Contact** (`/contact`) - Contact form and social links
-- **Resume** (`/resume`) - Professional resume
+## Deploy on Vercel
 
-## 🚀 Deployment
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-### Vercel
-```bash
-npm run build
-vercel deploy
-```
-
-### Build & Start
-```bash
-npm run build
-npm start
-```
-
-## 📊 Key Features Implemented
-
-✅ Fully responsive design
-✅ Sticky animated navbar with mobile menu
-✅ Dark/light mode toggle
-✅ Smooth scroll behavior
-✅ SEO optimized with metadata
-✅ Reusable components
-✅ Clean folder structure
-✅ Professional typography
-✅ Gradient backgrounds
-✅ Animated hero section
-✅ Project cards with hover effects
-✅ Loading animations
-✅ Page transitions
-✅ Accessibility friendly
-
-## 📄 License
-
-This project is open source and available under the MIT License.
-
----
-
-Made with ❤️
-
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

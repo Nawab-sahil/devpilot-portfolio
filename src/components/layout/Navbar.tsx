@@ -1,105 +1,51 @@
-'use client';
+"use client";
 
-import { useScrolled } from '@/hooks/useTheme';
-import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
-import Link from 'next/link';
-import { useState } from 'react';
-import { ThemeToggle } from '@/components/ui/ThemeToggle';
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/skills', label: 'Skills' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/contact', label: 'Contact' },
+  ["About", "/about"],
+  ["Projects", "/projects"],
+  ["Skills", "/skills"],
+  ["Resume", "/resume"],
+  ["Blog", "/blog"],
+  ["Contact", "/contact"],
 ];
 
-export function Navbar() {
-  const isScrolled = useScrolled();
-  const [isMobileOpen, setIsMobileOpen] = useState(false);
-
+export default function Navbar({ isVisible }: { isVisible: boolean }) {
   return (
-    <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-gray-950/80 backdrop-blur-md border-b border-gray-800'
-          : 'bg-transparent'
-      }`}
+    <motion.header
+      initial={{ opacity: 0, y: -18 }}
+      animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -18 }}
+      transition={{ duration: 0.52, ease: [0.22, 1, 0.36, 1] }}
+      className="sticky top-0 z-40 border-b border-dp-border-primary bg-[color:var(--bg)]/92 backdrop-blur-xl"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="flex items-center space-x-2 group"
-          >
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center font-bold text-white group-hover:shadow-lg group-hover:shadow-cyan-500/50 transition-all duration-300">
-              D
-            </div>
-            <span className="text-lg font-bold text-white hidden sm:inline">
-              DevPortfolio
-            </span>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-colors duration-200"
-              >
-                {link.label}
-              </Link>
-            ))}
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <Link href="/" className="flex items-center gap-3">
+          <span className="flex h-10 w-10 items-center justify-center rounded-full border border-dp-border-secondary bg-dp-bg-3 font-mono text-sm text-dp-lime shadow-lime">
+            DP
+          </span>
+          <div>
+            <div className="text-sm font-semibold tracking-[0.24em] text-dp-text-primary">DEVPILOT</div>
+            <div className="font-mono text-[10px] tracking-[0.32em] text-dp-text-secondary">PORTFOLIO</div>
           </div>
+        </Link>
 
-          {/* Right side - Theme toggle and Resume CTA */}
-          <div className="flex items-center space-x-4">
-            <ThemeToggle />
-            <Button asChild className="hidden sm:inline-flex px-4 py-2 text-sm">
-              <Link href="/resume">Resume</Link>
-            </Button>
+        <nav className="hidden items-center gap-6 lg:flex">
+          {navLinks.map(([label, href]) => (
+            <Link key={href} href={href} className="text-sm text-dp-text-secondary transition hover:text-dp-text-primary">
+              {label}
+            </Link>
+          ))}
+        </nav>
 
-            {/* Mobile menu button */}
-            <button
-              onClick={() => setIsMobileOpen(!isMobileOpen)}
-              className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-gray-700 bg-gray-900/50 hover:bg-gray-800 transition-colors duration-200"
-            >
-              {isMobileOpen ? (
-                <X className="w-5 h-5 text-white" />
-              ) : (
-                <Menu className="w-5 h-5 text-white" />
-              )}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isMobileOpen && (
-          <div className="md:hidden border-t border-gray-800 bg-gray-900/50 backdrop-blur-md">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsMobileOpen(false)}
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-colors duration-200"
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <Button asChild className="block w-full mt-4">
-                <Link href="/resume" onClick={() => setIsMobileOpen(false)}>
-                  Download Resume
-                </Link>
-              </Button>
-            </div>
-          </div>
-        )}
+        <Link
+          href="/contact"
+          className="rounded-full border border-dp-orange/40 bg-dp-orange px-4 py-2 text-sm font-medium text-black transition hover:-translate-y-0.5 hover:bg-dp-orange-dark"
+        >
+          Hire Me
+        </Link>
       </div>
-    </nav>
+    </motion.header>
   );
 }

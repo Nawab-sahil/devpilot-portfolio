@@ -1,129 +1,49 @@
-import type { Metadata } from 'next';
-import { socialLinks } from '@/data/content';
-import { Code2, Link2, Mail, MapPin, X } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
-import ContactForm from './contact-form';
+import Link from "next/link";
+import { Mail, MapPin, MessageSquareText, Send, Smartphone } from "lucide-react";
+import SectionHeader from "@/components/common/SectionHeader";
 
-export const metadata: Metadata = {
-  title: 'Contact | DevPilot Portfolio',
-  description: 'Get in touch with Sahil for collaborations, freelance work, and opportunities.',
-};
-
-const iconMap: Record<string, LucideIcon> = {
-  Github: Code2,
-  Linkedin: Link2,
-  Twitter: X,
-  Mail: Mail,
-};
-
-export default function Contact() {
+export default function ContactPage() {
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="pt-20 pb-12 border-b border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Get In <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Touch</span>
-          </h1>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Have a question or want to collaborate? I'd love to hear from you. 
-            Feel free to reach out using the form below or through my social channels.
-          </p>
-        </div>
-      </section>
+    <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <SectionHeader label="CONTACT" title="Start a project conversation" count="LET'S TALK" />
 
-      {/* Contact Content */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Contact Information */}
-            <div className="lg:col-span-1">
-              <h2 className="text-2xl font-bold text-white mb-8">Contact Information</h2>
-
-              {/* Email */}
-              <div className="mb-8">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-10 h-10 rounded-lg bg-cyan-500/20 flex items-center justify-center">
-                    <Mail className="w-5 h-5 text-cyan-400" />
-                  </div>
-                  <span className="text-gray-400 text-sm">Email</span>
-                </div>
-                <a
-                  href="mailto:your.email@example.com"
-                  className="text-white text-lg font-semibold hover:text-cyan-400 transition-colors"
-                >
-                  your.email@example.com
-                </a>
-              </div>
-
-              {/* Location */}
-              <div className="mb-8">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-10 h-10 rounded-lg bg-cyan-500/20 flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-cyan-400" />
-                  </div>
-                  <span className="text-gray-400 text-sm">Location</span>
-                </div>
-                <p className="text-white text-lg font-semibold">India</p>
-              </div>
-
-              {/* Response Time */}
-              <div className="mb-8 p-6 rounded-lg border border-gray-800 bg-gray-900/50">
-                <h3 className="text-white font-semibold mb-2">Response Time</h3>
-                <p className="text-gray-400 text-sm">
-                  I typically respond to inquiries within 24-48 hours.
-                </p>
-              </div>
-
-              {/* Social Links */}
-              <h3 className="text-white font-semibold mb-4">Follow Me</h3>
-              <div className="flex gap-3">
-                {socialLinks.map((link) => {
-                  const IconComponent = iconMap[link.icon] ?? Link2;
-                  return (
-                    <a
-                      key={link.label}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-12 h-12 rounded-lg border border-gray-700 bg-gray-900/50 flex items-center justify-center text-gray-400 hover:text-white hover:border-cyan-500 hover:bg-cyan-500/10 transition-all duration-200"
-                      aria-label={link.label}
-                      title={link.label}
-                    >
-                      <IconComponent className="w-5 h-5" />
-                    </a>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Contact Form */}
-            <div className="lg:col-span-2">
-              <div className="p-8 rounded-xl border border-gray-800 bg-gray-900/50 backdrop-blur-sm">
-                <h2 className="text-2xl font-bold text-white mb-6">Send Me a Message</h2>
-
-                <ContactForm />
-              </div>
-
-              {/* Additional Info */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                <div className="p-6 rounded-lg border border-gray-800 bg-gray-900/50">
-                  <h3 className="text-white font-semibold mb-2">Collaboration</h3>
-                  <p className="text-gray-400 text-sm">
-                    I'm always interested in collaborating on exciting projects and exploring new opportunities.
-                  </p>
-                </div>
-                <div className="p-6 rounded-lg border border-gray-800 bg-gray-900/50">
-                  <h3 className="text-white font-semibold mb-2">Feedback</h3>
-                  <p className="text-gray-400 text-sm">
-                    Have feedback or suggestions? I'd love to hear your thoughts on my work and portfolio.
-                  </p>
-                </div>
-              </div>
-            </div>
+      <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
+        <form className="dp-panel rounded-[32px] p-6">
+          <div className="grid gap-4 sm:grid-cols-2">
+            <label className="space-y-2">
+              <span className="text-sm text-dp-text-secondary">Name</span>
+              <input className="w-full rounded-2xl border border-dp-border-secondary bg-dp-bg-3 px-4 py-3 text-dp-text-primary outline-none ring-0 placeholder:text-dp-text-dark focus:border-dp-orange" placeholder="Your name" />
+            </label>
+            <label className="space-y-2">
+              <span className="text-sm text-dp-text-secondary">Email</span>
+              <input className="w-full rounded-2xl border border-dp-border-secondary bg-dp-bg-3 px-4 py-3 text-dp-text-primary outline-none ring-0 placeholder:text-dp-text-dark focus:border-dp-orange" placeholder="you@example.com" />
+            </label>
           </div>
-        </div>
-      </section>
+
+          <label className="mt-4 block space-y-2">
+            <span className="text-sm text-dp-text-secondary">Project details</span>
+            <textarea className="min-h-44 w-full rounded-2xl border border-dp-border-secondary bg-dp-bg-3 px-4 py-3 text-dp-text-primary outline-none ring-0 placeholder:text-dp-text-dark focus:border-dp-orange" placeholder="Tell me about the product, scope, and timeline." />
+          </label>
+
+          <button type="submit" className="mt-6 inline-flex items-center gap-2 rounded-full bg-dp-lime px-5 py-3 text-sm font-medium text-black transition hover:bg-white">
+            Send Message <Send size={16} />
+          </button>
+        </form>
+
+        <aside className="dp-panel rounded-[32px] p-6">
+          <div className="font-mono text-[11px] tracking-[0.34em] text-dp-text-secondary">INFO</div>
+          <h2 className="mt-3 text-3xl font-semibold text-dp-text-primary">Fast response channels</h2>
+          <div className="mt-6 space-y-4 text-sm text-dp-text-secondary">
+            <div className="flex items-center gap-3 rounded-2xl border border-dp-border-secondary bg-dp-bg-3 px-4 py-3"><Mail size={16} className="text-dp-lime" /> hello@devpilot.dev</div>
+            <div className="flex items-center gap-3 rounded-2xl border border-dp-border-secondary bg-dp-bg-3 px-4 py-3"><Smartphone size={16} className="text-dp-teal" /> +91 00000 00000</div>
+            <div className="flex items-center gap-3 rounded-2xl border border-dp-border-secondary bg-dp-bg-3 px-4 py-3"><MapPin size={16} className="text-dp-amber" /> Gujarat, India</div>
+            <div className="flex items-center gap-3 rounded-2xl border border-dp-border-secondary bg-dp-bg-3 px-4 py-3"><MessageSquareText size={16} className="text-dp-rose" /> Available for freelance and product work</div>
+          </div>
+          <Link href="mailto:hello@devpilot.dev" className="mt-8 inline-flex items-center gap-2 rounded-full border border-dp-border-secondary px-5 py-3 text-sm font-medium text-dp-text-primary transition hover:border-dp-lime hover:text-dp-lime">
+            hello@devpilot.dev
+          </Link>
+        </aside>
+      </div>
     </div>
   );
 }
