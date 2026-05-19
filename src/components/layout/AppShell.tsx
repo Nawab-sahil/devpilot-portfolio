@@ -18,7 +18,7 @@ export default function AppShell({ children }: { children: ReactNode }) {
       <Loader
         onComplete={handleLoaderComplete}
       />
-      <div className="flex min-h-screen flex-col">
+      <div className="mx-3 flex min-h-screen flex-col sm:mx-4 lg:mx-6">
         <Navbar />
         <AnimatePresence>
           {contentVisible ? (

@@ -2,6 +2,11 @@ import SectionHeader from "@/components/common/SectionHeader";
 import Timeline from "@/components/common/Timeline";
 import { timeline } from "@/data/portfolio";
 
+export const metadata = {
+  title: 'About — Sahil — Full-Stack Developer',
+  description: 'About Sahil — MCA student at DDU Nadiad. Full-stack developer with a focus on Next.js and Cloud.',
+};
+
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">

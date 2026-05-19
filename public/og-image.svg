@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0%" stop-color="#ff8a00" />
+      <stop offset="50%" stop-color="#ffd54a" />
+      <stop offset="100%" stop-color="#a3e635" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#g)" />
+  <g font-family="'JetBrains Mono', monospace" fill="#08131a">
+    <text x="60" y="220" font-size="64" font-weight="700">Sahil — Full-Stack Developer</text>
+    <text x="60" y="320" font-size="32" opacity="0.95">MERN · Next.js · Cloud · MCA @ DDU Nadiad</text>
+  </g>
+</svg>

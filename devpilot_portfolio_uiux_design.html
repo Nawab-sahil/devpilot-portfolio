@@ -1,0 +1,451 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#05060f;--bg2:#0c0e1e;--bg3:#12142a;--bg4:#1a1d35;
+  --border:#1e2240;--border2:#2a2e55;
+  --t1:#f0f0ff;--t2:#9090c0;--t3:#5a5a80;
+  --cyan:#00d4ff;--cyan2:#0099cc;--cyan3:#004466;
+  --rose:#ff4d8d;--rose2:#cc2266;
+  --amber:#ffaa00;
+  --green:#00e5a0;
+  --purple:#8855ff;
+  --r:8px;--rl:12px;
+}
+.root{background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(--t1);min-height:2800px}
+
+/* NAV */
+.nav{background:var(--bg);border-bottom:0.5px solid var(--border);padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:15px;color:var(--cyan);letter-spacing:0.5px}
+.nav-logo span{color:var(--t3)}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-links a{font-size:13px;color:var(--t3);text-decoration:none;cursor:pointer;transition:color .2s}
+.nav-links a:hover{color:var(--t1)}
+.nav-links a.active{color:var(--cyan)}
+.nav-badge{font-size:11px;font-family:'JetBrains Mono',monospace;background:rgba(0,228,160,0.08);color:var(--green);border:0.5px solid rgba(0,228,160,0.25);padding:4px 10px;border-radius:20px;display:flex;align-items:center;gap:6px}
+.nav-badge::before{content:'';display:block;width:5px;height:5px;background:var(--green);border-radius:50%;animation:pulse-dot 2s ease infinite}
+@keyframes pulse-dot{0%,100%{opacity:0.4}50%{opacity:1}}
+
+/* HERO */
+.hero{padding:64px 32px 56px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.hero-left{}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--cyan);letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.hero-tag::before{content:'';width:20px;height:1px;background:var(--cyan);display:block}
+.hero-h1{font-size:44px;font-weight:700;line-height:1.1;margin-bottom:8px;letter-spacing:-1px}
+.hero-h1 .name{color:var(--t1)}
+.hero-sub{font-size:16px;color:var(--t2);margin-bottom:6px;font-weight:400}
+.hero-role{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--cyan);margin-bottom:20px}
+.hero-role .cursor{display:inline-block;width:2px;height:14px;background:var(--cyan);margin-left:2px;vertical-align:middle;animation:blink .8s step-end infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.hero-desc{font-size:14px;color:var(--t2);line-height:1.75;max-width:400px;margin-bottom:28px}
+.hero-btns{display:flex;gap:12px}
+.btn-cta{background:var(--cyan);color:#000;border:none;padding:10px 22px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;transition:opacity .2s}
+.btn-cta:hover{opacity:0.85}
+.btn-ghost{background:transparent;color:var(--cyan);border:0.5px solid var(--cyan2);padding:10px 22px;border-radius:6px;font-size:13px;font-weight:500;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;transition:background .2s}
+.btn-ghost:hover{background:rgba(0,212,255,0.06)}
+
+/* TERMINAL BOX */
+.terminal{background:var(--bg2);border:0.5px solid var(--border);border-radius:var(--rl);overflow:hidden}
+.term-bar{background:var(--bg3);padding:10px 14px;display:flex;align-items:center;gap:6px;border-bottom:0.5px solid var(--border)}
+.td{width:10px;height:10px;border-radius:50%}
+.td-r{background:#ff5f57}.td-y{background:#febc2e}.td-g{background:#28c840}
+.term-title{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--t3);margin-left:8px}
+.term-body{padding:20px 20px 20px;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:2}
+.tl{display:flex;gap:8px}
+.tl-prompt{color:var(--cyan)}
+.tl-cmd{color:var(--t2)}
+.tl-out{color:var(--green);padding-left:16px}
+.tl-comment{color:var(--t3);padding-left:16px;font-size:11px}
+.tl-key{color:var(--amber)}
+.tl-val{color:var(--rose)}
+.tl-status{color:var(--green)}
+
+/* STATS */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);background:var(--bg2)}
+.stat-cell{padding:20px 28px;border-right:0.5px solid var(--border)}
+.stat-cell:last-child{border-right:none}
+.stat-n{font-size:26px;font-weight:700;font-family:'JetBrains Mono',monospace;color:var(--cyan)}
+.stat-l{font-size:11px;color:var(--t3);letter-spacing:0.8px;margin-top:2px;text-transform:uppercase}
+
+/* SECTION */
+.section{padding:48px 32px}
+.section-head{display:flex;align-items:center;gap:14px;margin-bottom:28px}
+.sh-tag{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--cyan);letter-spacing:1.5px}
+.sh-line{flex:1;height:0.5px;background:var(--border)}
+.sh-count{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--t3)}
+
+/* PROJECTS */
+.proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.proj-card{background:var(--bg2);border:0.5px solid var(--border);border-radius:var(--rl);padding:22px;cursor:pointer;transition:border-color .25s,transform .2s;position:relative;overflow:hidden}
+.proj-card:hover{border-color:var(--cyan2);transform:translateY(-2px)}
+.proj-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cyan),var(--purple));transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.proj-card:hover::after{transform:scaleX(1)}
+.proj-card.featured{border-color:var(--border2)}
+.proj-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px}
+.proj-status{font-size:10px;font-family:'JetBrains Mono',monospace;padding:3px 8px;border-radius:4px}
+.st-done{background:rgba(0,229,160,0.08);color:var(--green);border:0.5px solid rgba(0,229,160,0.2)}
+.st-wip{background:rgba(255,170,0,0.08);color:var(--amber);border:0.5px solid rgba(255,170,0,0.2)}
+.proj-title{font-size:15px;font-weight:600;color:var(--t1);margin-bottom:8px}
+.proj-desc{font-size:12px;color:var(--t3);line-height:1.65;margin-bottom:14px}
+.proj-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.tag{font-size:10px;font-family:'JetBrains Mono',monospace;color:var(--t2);background:var(--bg3);border:0.5px solid var(--border2);padding:3px 8px;border-radius:4px}
+.proj-links{display:flex;gap:8px}
+.plink{font-size:11px;color:var(--t3);background:var(--bg3);border:0.5px solid var(--border);padding:5px 12px;border-radius:5px;cursor:pointer;transition:color .2s,border-color .2s}
+.plink:hover{color:var(--cyan);border-color:var(--cyan2)}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.skill-group{background:var(--bg2);border:0.5px solid var(--border);border-radius:var(--rl);padding:20px}
+.sg-head{display:flex;align-items:center;gap:8px;margin-bottom:16px}
+.sg-icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px}
+.sg-fe{background:rgba(0,212,255,0.1);color:var(--cyan)}
+.sg-be{background:rgba(136,85,255,0.1);color:var(--purple)}
+.sg-db{background:rgba(255,170,0,0.1);color:var(--amber)}
+.sg-to{background:rgba(0,229,160,0.1);color:var(--green)}
+.sg-title{font-size:12px;font-weight:600;color:var(--t2);letter-spacing:0.5px;font-family:'JetBrains Mono',monospace}
+.skill-row{margin-bottom:10px}
+.skill-meta{display:flex;justify-content:space-between;margin-bottom:5px}
+.skill-name{font-size:12px;color:var(--t2)}
+.skill-pct{font-size:11px;color:var(--t3);font-family:'JetBrains Mono',monospace}
+.skill-track{height:3px;background:var(--bg3);border-radius:3px;overflow:hidden}
+.skill-bar{height:100%;border-radius:3px;transition:width 1.4s cubic-bezier(.4,0,.2,1)}
+.sb-cyan{background:var(--cyan)}
+.sb-purple{background:var(--purple)}
+.sb-amber{background:var(--amber)}
+.sb-green{background:var(--green)}
+
+/* ABOUT PREVIEW */
+.about-grid{display:grid;grid-template-columns:1fr 2fr;gap:24px;align-items:start}
+.avatar-block{background:var(--bg2);border:0.5px solid var(--border);border-radius:var(--rl);padding:24px;text-align:center}
+.avatar-circle{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--cyan2),var(--purple));display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:700;color:#fff;margin:0 auto 14px}
+.av-name{font-size:15px;font-weight:600;margin-bottom:4px}
+.av-role{font-size:12px;color:var(--t3);margin-bottom:14px}
+.av-badges{display:flex;flex-direction:column;gap:6px}
+.av-badge{font-size:11px;color:var(--t2);background:var(--bg3);border:0.5px solid var(--border);padding:6px 10px;border-radius:6px;text-align:left}
+
+.timeline-block{display:flex;flex-direction:column;gap:0}
+.tl-item{display:flex;gap:16px;padding-bottom:18px}
+.tl-axis{display:flex;flex-direction:column;align-items:center;gap:0}
+.tl-dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);flex-shrink:0;margin-top:5px;border:1px solid var(--bg)}
+.tl-vline{width:0.5px;flex:1;background:var(--border);margin-top:2px}
+.tl-year{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--cyan);margin-bottom:2px}
+.tl-t{font-size:13px;font-weight:500;color:var(--t1);margin-bottom:2px}
+.tl-s{font-size:12px;color:var(--t3)}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.contact-form-card{background:var(--bg2);border:0.5px solid var(--border);border-radius:var(--rl);padding:24px}
+.cf-row{margin-bottom:14px}
+.cf-label{font-size:11px;color:var(--t3);letter-spacing:0.5px;margin-bottom:6px;font-family:'JetBrains Mono',monospace}
+.cf-input{width:100%;background:var(--bg3);border:0.5px solid var(--border2);border-radius:6px;padding:9px 12px;font-size:13px;color:var(--t1);font-family:'Plus Jakarta Sans',sans-serif;outline:none;transition:border-color .2s}
+.cf-input:focus{border-color:var(--cyan2)}
+.cf-textarea{height:80px;resize:none}
+.cf-btn{background:var(--cyan);color:#000;border:none;padding:10px 24px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;width:100%;font-family:'Plus Jakarta Sans',sans-serif}
+
+.contact-info{display:flex;flex-direction:column;gap:12px}
+.ci-card{background:var(--bg2);border:0.5px solid var(--border);border-radius:var(--rl);padding:18px}
+.ci-title{font-size:11px;color:var(--t3);letter-spacing:0.8px;margin-bottom:10px;font-family:'JetBrains Mono',monospace}
+.ci-link{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:13px;color:var(--t2);cursor:pointer}
+.ci-link:hover{color:var(--cyan)}
+.ci-icon{width:28px;height:28px;background:var(--bg3);border:0.5px solid var(--border2);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+
+/* BLOG */
+.blog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.blog-card{background:var(--bg2);border:0.5px solid var(--border);border-radius:var(--rl);padding:20px;cursor:pointer;transition:border-color .25s}
+.blog-card:hover{border-color:var(--cyan2)}
+.bc-tags{display:flex;gap:6px;margin-bottom:10px}
+.bc-tag{font-size:10px;font-family:'JetBrains Mono',monospace;color:var(--cyan);background:rgba(0,212,255,0.07);border:0.5px solid rgba(0,212,255,0.2);padding:2px 8px;border-radius:4px}
+.bc-title{font-size:14px;font-weight:600;margin-bottom:6px;line-height:1.4}
+.bc-excerpt{font-size:12px;color:var(--t3);line-height:1.65;margin-bottom:12px}
+.bc-meta{display:flex;justify-content:space-between;font-size:11px;color:var(--t3);font-family:'JetBrains Mono',monospace}
+
+/* FOOTER */
+.footer{background:var(--bg2);border-top:0.5px solid var(--border);padding:28px 32px;display:flex;justify-content:space-between;align-items:center}
+.footer-logo{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--cyan)}
+.footer-copy{font-size:12px;color:var(--t3)}
+.footer-links{display:flex;gap:16px}
+.footer-links a{font-size:12px;color:var(--t3);text-decoration:none;cursor:pointer}
+.footer-links a:hover{color:var(--t1)}
+</style>
+
+<h2 class="sr-only">DevPilot Portfolio — full UI/UX design preview with navbar, hero, projects, skills, about, contact, blog, and footer sections.</h2>
+
+<div class="root">
+
+  <nav class="nav">
+    <span class="nav-logo"><span style="color:var(--t3)">&#60;</span> Sahil <span style="color:var(--t3)">/&#62;</span></span>
+    <div class="nav-links">
+      <a class="active">Home</a>
+      <a>About</a>
+      <a>Projects</a>
+      <a>Skills</a>
+      <a>Resume</a>
+      <a>Blog</a>
+      <a>Contact</a>
+    </div>
+    <div class="nav-badge">Open to Work</div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-tag">Full-Stack Developer</div>
+      <h1 class="hero-h1"><span class="name">Hi, I'm Sahil</span></h1>
+      <div class="hero-sub">MCA Student @ DDU Nadiad, Gujarat</div>
+      <div class="hero-role" id="typed-role">MERN Stack Developer<span class="cursor"></span></div>
+      <p class="hero-desc">I build modern web applications and developer tools. Passionate about clean code, great UX, and cloud-native solutions.</p>
+      <div class="hero-btns">
+        <button class="btn-cta">View Projects</button>
+        <button class="btn-ghost">Download Resume</button>
+      </div>
+    </div>
+    <div class="terminal">
+      <div class="term-bar">
+        <div class="td td-r"></div><div class="td td-y"></div><div class="td td-g"></div>
+        <span class="term-title">devpilot — profile.sh</span>
+      </div>
+      <div class="term-body">
+        <div class="tl"><span class="tl-prompt">~$</span><span class="tl-cmd"> cat developer.json</span></div>
+        <div class="tl-out">{</div>
+        <div class="tl-out" style="padding-left:32px"><span class="tl-key">"name"</span>: <span class="tl-val">"Sahil"</span>,</div>
+        <div class="tl-out" style="padding-left:32px"><span class="tl-key">"role"</span>: <span class="tl-val">"Full-Stack Dev"</span>,</div>
+        <div class="tl-out" style="padding-left:32px"><span class="tl-key">"stack"</span>: <span class="tl-val">["React","Node","MongoDB"]</span>,</div>
+        <div class="tl-out" style="padding-left:32px"><span class="tl-key">"status"</span>: <span class="tl-status">"Open to Work ✓"</span>,</div>
+        <div class="tl-out" style="padding-left:32px"><span class="tl-key">"location"</span>: <span class="tl-val">"Gujarat, India"</span></div>
+        <div class="tl-out">}</div>
+        <div class="tl"><span class="tl-prompt">~$</span><span class="tl-cmd"> <span id="term-cursor" style="display:inline-block;width:7px;height:13px;background:var(--cyan);vertical-align:middle;animation:blink .8s step-end infinite"></span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats-strip">
+    <div class="stat-cell"><div class="stat-n" data-t="06">0</div><div class="stat-l">Projects Built</div></div>
+    <div class="stat-cell"><div class="stat-n" data-t="03">0</div><div class="stat-l">Open Source</div></div>
+    <div class="stat-cell"><div class="stat-n" data-t="04">0</div><div class="stat-l">Technologies</div></div>
+    <div class="stat-cell"><div class="stat-n" data-t="01" style="color:var(--green)">0</div><div class="stat-l">Available Now</div></div>
+  </div>
+
+  <section class="section">
+    <div class="section-head">
+      <span class="sh-tag">// PROJECTS</span>
+      <div class="sh-line"></div>
+      <span class="sh-count">06 total</span>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card featured">
+        <div class="proj-top">
+          <span class="proj-status st-done">COMPLETED</span>
+          <span style="font-size:11px;font-family:'JetBrains Mono',monospace;color:var(--cyan)">featured</span>
+        </div>
+        <div class="proj-title">DevOps Deployment Dashboard</div>
+        <div class="proj-desc">Real-time tracking of Docker, Kubernetes & CI/CD pipelines with live health metrics and alert system.</div>
+        <div class="proj-tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Docker</span><span class="tag">Tailwind</span></div>
+        <div class="proj-links"><span class="plink">GitHub</span><span class="plink">Live Demo</span><span class="plink">Details →</span></div>
+      </div>
+      <div class="proj-card featured">
+        <div class="proj-top">
+          <span class="proj-status st-done">COMPLETED</span>
+          <span style="font-size:11px;font-family:'JetBrains Mono',monospace;color:var(--cyan)">featured</span>
+        </div>
+        <div class="proj-title">Smart Resume Analyzer</div>
+        <div class="proj-desc">AI-powered resume scoring system with keyword analysis, ATS simulation, and improvement suggestions.</div>
+        <div class="proj-tags"><span class="tag">Node.js</span><span class="tag">MongoDB</span><span class="tag">React</span><span class="tag">NLP</span></div>
+        <div class="proj-links"><span class="plink">GitHub</span><span class="plink">Live Demo</span><span class="plink">Details →</span></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-top"><span class="proj-status st-wip">IN PROGRESS</span></div>
+        <div class="proj-title">E-Commerce Platform</div>
+        <div class="proj-desc">Full MERN stack shopping platform with Redux state, Stripe payments, and admin dashboard.</div>
+        <div class="proj-tags"><span class="tag">React</span><span class="tag">Redux</span><span class="tag">Node.js</span><span class="tag">Stripe</span></div>
+        <div class="proj-links"><span class="plink">GitHub</span><span class="plink">Details →</span></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-top"><span class="proj-status st-done">COMPLETED</span></div>
+        <div class="proj-title">ATM System — Java OOP</div>
+        <div class="proj-desc">Console-based ATM simulation with full OOP design — account management, transactions, PIN verification.</div>
+        <div class="proj-tags"><span class="tag">Java</span><span class="tag">OOP</span><span class="tag">CLI</span></div>
+        <div class="proj-links"><span class="plink">GitHub</span><span class="plink">Details →</span></div>
+      </div>
+    </div>
+    <div style="margin-top:16px;text-align:center"><span style="font-size:13px;color:var(--cyan);cursor:pointer;font-family:'JetBrains Mono',monospace">View All Projects →</span></div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="section-head">
+      <span class="sh-tag">// SKILLS</span>
+      <div class="sh-line"></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="sg-head"><div class="sg-icon sg-fe"><i class="ti ti-layout" aria-hidden="true"></i></div><span class="sg-title">FRONTEND</span></div>
+        <div class="skill-row"><div class="skill-meta"><span class="skill-name">React / Next.js</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-bar sb-cyan" style="width:0" data-w="90"></div></div></div>
+        <div class="skill-row"><div class="skill-meta"><span class="skill-name">TypeScript</span><span class="skill-pct">80%</span></div><div class="skill-track"><div class="skill-bar sb-cyan" style="width:0" data-w="80"></div></div></div>
+        <div class="skill-row"><div class="skill-meta"><span class="skill-name">Tailwind CSS</span><span class="skill-pct">88%</span></div><div class="skill-track"><div class="skill-bar sb-cyan" style="width:0" data-w="88"></div></div></div>
+      </div>
+      <div class="skill-group">
+        <div class="sg-head"><div class="sg-icon sg-be"><i class="ti ti-server" aria-hidden="true"></i></div><span class="sg-title">BACKEND</span></div>
+        <div class="skill-row"><div class="skill-meta"><span class="skill-name">Node.js / Express</span><span class="skill-pct">82%</span></div><div class="skill-track"><div class="skill-bar sb-purple" style="width:0" data-w="82"></div></div></div>
+        <div class="skill-row"><div class="skill-meta"><span class="skill-name">REST APIs</span><span class="skill-pct">85%</span></div><div class="skill-track"><div class="skill-bar sb-purple" style="width:0" data-w="85"></div></div></div>
+        <div class="skill-row"><div class="skill-meta"><span class="skill-name">Java</span><span class="skill-pct">72%</span></div><div class="skill-track"><div class="skill-bar sb-purple" style="width:0" data-w="72"></div></div></div>
+      </div>
+      <div class="skill-group">
+        <div class="sg-head"><div class="sg-icon sg-db"><i class="ti ti-database" aria-hidden="true"></i></div><span class="sg-title">DATABASE</span></div>
+        <div class="skill-row"><div class="skill-meta"><span class="skill-name">MongoDB</span><span class="skill-pct">80%</span></div><div class="skill-track"><div class="skill-bar sb-amber" style="width:0" data-w="80"></div></div></div>
+        <div class="skill-row"><div class="skill-meta"><span class="skill-name">Firebase</span><span class="skill-pct">65%</span></div><div class="skill-track"><div class="skill-bar sb-amber" style="width:0" data-w="65"></div></div></div>
+        <div class="skill-row"><div class="skill-meta"><span class="skill-name">MySQL</span><span class="skill-pct">55%</span></div><div class="skill-track"><div class="skill-bar sb-amber" style="width:0" data-w="55"></div></div></div>
+      </div>
+      <div class="skill-group">
+        <div class="sg-head"><div class="sg-icon sg-to"><i class="ti ti-tool" aria-hidden="true"></i></div><span class="sg-title">TOOLS & DEVOPS</span></div>
+        <div class="skill-row"><div class="skill-meta"><span class="skill-name">Git / GitHub</span><span class="skill-pct">92%</span></div><div class="skill-track"><div class="skill-bar sb-green" style="width:0" data-w="92"></div></div></div>
+        <div class="skill-row"><div class="skill-meta"><span class="skill-name">Docker</span><span class="skill-pct">68%</span></div><div class="skill-track"><div class="skill-bar sb-green" style="width:0" data-w="68"></div></div></div>
+        <div class="skill-row"><div class="skill-meta"><span class="skill-name">Vercel / AWS</span><span class="skill-pct">62%</span></div><div class="skill-track"><div class="skill-bar sb-green" style="width:0" data-w="62"></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="section-head">
+      <span class="sh-tag">// ABOUT</span>
+      <div class="sh-line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="avatar-block">
+        <div class="avatar-circle">S</div>
+        <div class="av-name">Sahil</div>
+        <div class="av-role">MCA @ DDU Nadiad</div>
+        <div class="av-badges">
+          <div class="av-badge"><i class="ti ti-map-pin" style="font-size:13px;margin-right:5px" aria-hidden="true"></i>Gujarat, India</div>
+          <div class="av-badge"><i class="ti ti-school" style="font-size:13px;margin-right:5px" aria-hidden="true"></i>MCA — DDU Nadiad</div>
+          <div class="av-badge" style="color:var(--green)"><i class="ti ti-briefcase" style="font-size:13px;margin-right:5px" aria-hidden="true"></i>Open to Remote</div>
+        </div>
+      </div>
+      <div class="timeline-block">
+        <div class="tl-item">
+          <div class="tl-axis"><div class="tl-dot"></div><div class="tl-vline"></div></div>
+          <div><div class="tl-year">2024 — Present</div><div class="tl-t">MCA — Masters in Computer Applications</div><div class="tl-s">DDU Nadiad, Gujarat · Cloud, DevOps & Full-Stack</div></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-axis"><div class="tl-dot" style="background:var(--purple)"></div><div class="tl-vline"></div></div>
+          <div><div class="tl-year">2023</div><div class="tl-t">First production Next.js app deployed</div><div class="tl-s">Vercel · CI/CD pipeline · 1000+ page views</div></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-axis"><div class="tl-dot" style="background:var(--amber)"></div><div class="tl-vline"></div></div>
+          <div><div class="tl-year">2022</div><div class="tl-t">BCA — Bachelor of Computer Applications</div><div class="tl-s">Foundations · Java OOP · Web basics</div></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-axis"><div class="tl-dot" style="background:var(--green)"></div></div>
+          <div><div class="tl-year">2021</div><div class="tl-t">First line of code</div><div class="tl-s">HTML, CSS · The curiosity never stopped</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="section-head">
+      <span class="sh-tag">// BLOG</span>
+      <div class="sh-line"></div>
+      <span class="sh-count">Dev Notes</span>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <div class="bc-tags"><span class="bc-tag">MERN</span><span class="bc-tag">React</span></div>
+        <div class="bc-title">What I Learned Building My First MERN App</div>
+        <div class="bc-excerpt">From zero to a deployed full-stack app — the architecture decisions, mistakes, and lessons that shaped how I code today.</div>
+        <div class="bc-meta"><span>Jan 2025</span><span>6 min read</span></div>
+      </div>
+      <div class="blog-card">
+        <div class="bc-tags"><span class="bc-tag">React</span><span class="bc-tag">Performance</span></div>
+        <div class="bc-title">React Performance: Memo, useMemo, and useCallback</div>
+        <div class="bc-excerpt">A practical guide to preventing unnecessary re-renders with real examples from my own projects.</div>
+        <div class="bc-meta"><span>Feb 2025</span><span>8 min read</span></div>
+      </div>
+      <div class="blog-card">
+        <div class="bc-tags"><span class="bc-tag">Java</span><span class="bc-tag">OOP</span></div>
+        <div class="bc-title">How I Built an ATM System in Java Using OOP</div>
+        <div class="bc-excerpt">Design patterns, class hierarchy, and how object-oriented thinking made the code clean and extensible.</div>
+        <div class="bc-meta"><span>Mar 2025</span><span>5 min read</span></div>
+      </div>
+      <div class="blog-card">
+        <div class="bc-tags"><span class="bc-tag">Career</span><span class="bc-tag">MCA</span></div>
+        <div class="bc-title">My Placement Prep Strategy as an MCA Student</div>
+        <div class="bc-excerpt">DSA, projects, resume building, and the daily routine that got me placement-ready in 3 months.</div>
+        <div class="bc-meta"><span>Apr 2025</span><span>7 min read</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="section-head">
+      <span class="sh-tag">// CONTACT</span>
+      <div class="sh-line"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-form-card">
+        <div class="cf-row"><div class="cf-label">NAME</div><input class="cf-input" placeholder="Your name" /></div>
+        <div class="cf-row"><div class="cf-label">EMAIL</div><input class="cf-input" type="email" placeholder="you@example.com" /></div>
+        <div class="cf-row"><div class="cf-label">MESSAGE</div><textarea class="cf-input cf-textarea" placeholder="Let's build something together..."></textarea></div>
+        <button class="cf-btn">Send Message</button>
+      </div>
+      <div class="contact-info">
+        <div class="ci-card">
+          <div class="ci-title">REACH OUT</div>
+          <div class="ci-link"><div class="ci-icon"><i class="ti ti-mail" aria-hidden="true"></i></div>sahil@gmail.com</div>
+          <div class="ci-link"><div class="ci-icon"><i class="ti ti-brand-linkedin" aria-hidden="true"></i></div>linkedin.com/in/nawab-sahil</div>
+          <div class="ci-link"><div class="ci-icon"><i class="ti ti-brand-github" aria-hidden="true"></i></div>github.com/Nawab-sahil</div>
+        </div>
+        <div class="ci-card" style="background:rgba(0,229,160,0.04);border-color:rgba(0,229,160,0.2)">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+            <div style="width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse-dot 2s ease infinite"></div>
+            <span style="font-size:13px;font-weight:600;color:var(--green)">Open to Work</span>
+          </div>
+          <div style="font-size:12px;color:var(--t3);line-height:1.6">Looking for remote full-stack or front-end roles. Usually replies within 24 hours.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span class="footer-logo">&#60; Sahil /&#62;</span>
+    <div class="footer-links">
+      <a>GitHub</a><a>LinkedIn</a><a>Resume</a>
+    </div>
+    <span class="footer-copy">Built with Next.js & Framer Motion · 2026</span>
+  </footer>
+
+</div>
+
+<script>
+setTimeout(() => {
+  document.querySelectorAll('.stat-n[data-t]').forEach(el => {
+    const t = parseInt(el.dataset.t);
+    let n = 0;
+    const id = setInterval(() => {
+      n = Math.min(n + 1, t);
+      el.textContent = String(n).padStart(2, '0') + '+';
+      if (n >= t) clearInterval(id);
+    }, 80);
+  });
+  document.querySelectorAll('.skill-bar[data-w]').forEach((bar, i) => {
+    setTimeout(() => { bar.style.width = bar.dataset.w + '%'; }, i * 100);
+  });
+}, 300);
+
+const roles = ['MERN Stack Developer', 'Next.js Engineer', 'Cloud Learner', 'Open Source Builder'];
+let ri = 0, ci = 0, del = false;
+const el = document.getElementById('typed-role');
+function tick() {
+  const cur = roles[ri];
+  if (!del) {
+    ci++;
+    el.innerHTML = cur.slice(0, ci) + '<span class="cursor"></span>';
+    if (ci === cur.length) { del = true; setTimeout(tick, 1600); return; }
+  } else {
+    ci--;
+    el.innerHTML = cur.slice(0, ci) + '<span class="cursor"></span>';
+    if (ci === 0) { del = false; ri = (ri + 1) % roles.length; }
+  }
+  setTimeout(tick, del ? 38 : 75);
+}
+tick();
+</script>

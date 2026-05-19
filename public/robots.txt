@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://sahil.dev/sitemap.xml
+Host: https://sahil.dev

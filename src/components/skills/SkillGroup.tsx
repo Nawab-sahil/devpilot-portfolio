@@ -9,7 +9,7 @@ type Props = {
 
 export default function SkillGroup({ categories }: Props) {
   return (
-    <div className="grid grid-cols-2 gap-[10px]">
+    <div className="grid grid-cols-2 gap-6">
       {categories.map((cat, i) => (
         <SkillCard key={cat.category} {...cat} index={i} />
       ))}

@@ -6,11 +6,11 @@ import { timeline } from "@/data/portfolio";
 
 export default function ResumePage() {
   return (
-    <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+    <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
       <SectionHeader label="RESUME" title="Experience timeline and highlights" count="PDF READY" />
 
       <div className="grid gap-8 lg:grid-cols-[1fr_0.72fr]">
-        <Timeline entries={timeline} className="gap-0" />
+        <Timeline entries={timeline} />
 
         <aside className="dp-panel rounded-[32px] p-6">
           <div className="font-mono text-[11px] tracking-[0.34em] text-dp-text-secondary">DOWNLOAD</div>

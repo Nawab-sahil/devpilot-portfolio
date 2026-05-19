@@ -1,9 +1,11 @@
 import Link from "next/link";
+import { Github, Linkedin } from "lucide-react";
 
 const links = [
-  ["GitHub", "https://github.com/"],
-  ["LinkedIn", "https://www.linkedin.com/"],
-  ["Resume", "/#contact"],
+  ["GitHub", "https://github.com/Nawab-sahil/", <Github key="gh" size={14} className="inline-block align-text-bottom mr-1"/>],
+  ["LeetCode", "https://leetcode.com/u/nawabsahil/", null],
+  ["LinkedIn", "https://www.linkedin.com/in/sahil-nawab", <Linkedin key="li" size={14} className="inline-block align-text-bottom mr-1"/>],
+  ["Resume", "/resume", null],
 ];
 
 export default function Footer() {
@@ -15,15 +17,16 @@ export default function Footer() {
         </Link>
 
         <div className="flex flex-wrap items-center gap-4 text-[12px]">
-          {links.map(([label, href]) => (
+          {links.map(([label, href, icon]) => (
             <Link
               key={href}
               href={href}
               target={href.startsWith("http") ? "_blank" : undefined}
               rel={href.startsWith("http") ? "noreferrer" : undefined}
-              className="text-dp-t3 transition hover:text-dp-t1"
+              className="text-dp-t3 transition hover:text-dp-t1 flex items-center gap-1"
             >
-              {label}
+              {icon}
+              <span>{label}</span>
             </Link>
           ))}
         </div>

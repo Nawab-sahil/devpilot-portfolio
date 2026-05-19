@@ -85,26 +85,26 @@ export default function SkillGroup({ category, icon, items, index = 0 }: SkillGr
       initial={{ opacity: 0, y: 18 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.55, ease: [0.4, 0, 0.2, 1] }}
-      className="rounded-[12px] border border-[color:var(--border)] bg-[color:var(--bg-2)] p-[18px]"
+      className="rounded-[18px] border border-dp-border-secondary bg-dp-bg-3 p-5"
     >
-      <div className="mb-3 flex items-center gap-3">
-        <div className="flex h-[26px] w-[26px] items-center justify-center rounded-[5px]" style={{ background: colors.tileBg }}>
-          <Icon aria-hidden className="h-4 w-4" style={{ color: colors.fill }} />
+      <div className="mb-4 flex items-center gap-3">
+        <div className="flex h-10 w-10 items-center justify-center rounded-[8px]" style={{ background: colors.tileBg }}>
+          <Icon aria-hidden className="h-5 w-5" style={{ color: colors.fill }} />
         </div>
-        <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-dp-text-primary">
+        <div className="font-mono text-[12px] uppercase tracking-[0.18em] text-dp-text-primary">
           {labelForCategory(category)}
         </div>
       </div>
 
-      <div className="flex flex-col gap-3.5">
+      <div className="flex flex-col gap-3">
         {items.map((skill, skillIndex) => (
           <div key={skill.name}>
             <div className="flex items-center justify-between gap-3">
-              <div className="text-[12px] leading-none text-dp-text-secondary">{skill.name}</div>
-              <div className="font-mono text-[10px] leading-none text-dp-text-dark">{skill.level}%</div>
+              <div className="text-[13px] leading-none text-dp-text-secondary">{skill.name}</div>
+              <div className="font-mono text-[11px] leading-none text-dp-text-dark">{skill.level}%</div>
             </div>
 
-            <div className="mt-2 h-[2.5px] overflow-hidden rounded-[2px] bg-[color:var(--bg-4)]">
+            <div className="mt-2 h-[2px] overflow-hidden rounded-[2px] bg-dp-bg-4">
               <motion.div
                 initial={{ width: 0 }}
                 animate={inView ? { width: `${skill.level}%` } : {}}

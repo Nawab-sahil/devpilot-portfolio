@@ -54,7 +54,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="grid grid-cols-1 gap-8 px-7 py-16 lg:grid-cols-2">
+    <section className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-y-8 px-7 py-16 lg:grid-cols-[minmax(0,520px)_minmax(0,1fr)] lg:items-center lg:gap-x-10">
       <motion.div className="space-y-6" variants={containerVariants} initial="hidden" animate="visible">
         <motion.div variants={itemVariants} className="flex items-center gap-2">
           <div className="h-0.5 w-5 bg-dp-lime" />
