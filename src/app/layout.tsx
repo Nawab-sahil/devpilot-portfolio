@@ -24,17 +24,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://sahil.dev',
+    url: 'https://nawabsahil.vercel.app',
     siteName: 'Nawab Sahil — Portfolio',
     images: [
       {
-        url: 'https://sahil.dev/og-image.svg',
+        url: 'https://nawabsahil.vercel.app',
         alt: 'Nawab Sahil — WordPress Expert and Full Stack Developer',
       },
     ],
   },
   alternates: {
-    canonical: 'https://sahil.dev',
+    canonical: 'https://nawabsahil.vercel.app',
   },
   twitter: {
     card: 'summary_large_image',
@@ -56,8 +56,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Nawab Sahil",
-    url: "https://sahil.dev",
-    image: "https://sahil.dev/og-image.svg",
+    url: "https://nawabsahil.vercel.app",
+    image: "https://nawabsahil.vercel.app",
     jobTitle: "WordPress Expert & Full-Stack Developer",
     alumniOf: "DDU Nadiad",
     knowsAbout: ["WordPress", "PHP", "Java", "ASP.NET", "SEO", "DevOps", "Google Ads"],
@@ -78,7 +78,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${jetbrains.variable}`}>
       <head>
-        <link rel="canonical" href="https://sahil.dev" />
+        <link rel="canonical" href="https://nawabsahil.vercel.app/" />
         <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger

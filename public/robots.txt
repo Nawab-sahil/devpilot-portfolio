@@ -1,5 +1,5 @@
 User-agent: *
-Disallow:
+Allow: /
 
-Sitemap: https://sahil.dev/sitemap.xml
-Host: https://sahil.dev
+Sitemap: https://nawabsahil.vercel.app/sitemap.xml
+Host: https://nawabsahil.vercel.app
