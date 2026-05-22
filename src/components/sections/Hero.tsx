@@ -6,10 +6,10 @@ import Terminal from "./Terminal";
 import { profile } from "@/data/portfolio";
 
 const roles = [
-  "WordPress Expert",
-  "PHP & Java Builder",
-  "SEO-Focused Developer",
-  "DevOps Learner",
+  "Software Engineer",
+  "Full-Stack Systems Builder",
+  "DevOps-Oriented Developer",
+  "Developer Tooling in Progress",
 ];
 
 export default function Hero() {
@@ -59,11 +59,11 @@ export default function Hero() {
       <motion.div className="space-y-6" variants={containerVariants} initial="hidden" animate="visible">
         <motion.div variants={itemVariants} className="flex items-center gap-2">
           <div className="h-0.5 w-5 bg-dp-lime" />
-          <span className="font-mono text-xs tracking-[2px] text-dp-lime">FULL-STACK DEVELOPER</span>
+          <span className="font-mono text-xs tracking-[2px] text-dp-lime">SOFTWARE ENGINEER</span>
         </motion.div>
 
         <motion.h1 variants={itemVariants} className="text-5xl font-bold leading-tight tracking-[-1px] text-dp-text-primary">
-          <span>Hi, I&apos;m </span>
+          <span>I&apos;m </span>
           <span className="text-dp-orange">Sahil</span>
         </motion.h1>
 
@@ -91,7 +91,7 @@ export default function Hero() {
 
         <motion.div variants={itemVariants} className="flex gap-2.5">
           <a href="#projects" className="rounded-md bg-dp-orange px-5 py-2.5 text-xs font-bold text-black transition-opacity hover:opacity-85">
-            View Projects
+            View Engineering Work
           </a>
           <a href="/resume" className="rounded-md border border-dp-lime/35 bg-transparent px-5 py-2.5 text-xs font-medium text-dp-lime transition-colors hover:bg-dp-lime-light">
             View Resume
@@ -105,10 +105,10 @@ export default function Hero() {
 
       <div className="grid grid-cols-1 border-t border-dp-border-primary sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4">
         {([
-          ["06+", "Projects Built", "text-dp-orange"],
-          ["03+", "Open Source", "text-dp-orange"],
-          ["08+", "Technologies", "text-dp-orange"],
-          ["Live", "Available Now", "text-dp-teal"],
+          ["09+", "Projects Shipped", "text-dp-orange"],
+          ["03", "Core Tracks", "text-dp-orange"],
+          ["CI/CD", "Workflow Focus", "text-dp-orange"],
+          ["Active", "Open to Roles", "text-dp-teal"],
         ] as const).map(([value, label, valueClass]) => (
           <div key={label} className="border-b border-r border-dp-border-primary px-5 py-8 last:border-r-0 sm:last:border-r lg:border-b-0">
             <div className={`font-mono text-[34px] font-bold leading-none ${valueClass}`}>{value}</div>

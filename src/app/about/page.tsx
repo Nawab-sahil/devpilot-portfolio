@@ -3,14 +3,14 @@ import Timeline from "@/components/common/Timeline";
 import { profile, timeline } from "@/data/portfolio";
 
 export const metadata = {
-  title: 'About Sahil — WordPress Expert, PHP & Java Developer',
-  description: 'About Nawab Sahil from Jamnagar, Gujarat. MCA at DDU Nadiad, BCA from Saurashtra University, building SEO-friendly web apps.',
+  title: 'About Nawab Sahil | Software Engineer and DevOps-Oriented Builder',
+  description: 'About Nawab Sahil, software engineer from Jamnagar pursuing MCA at Dharmsinh Desai University after BCA at Saurashtra University. Focused on full-stack systems, delivery workflows, and technical SEO.',
 };
 
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-      <SectionHeader label="ABOUT" title="A builder who likes sharp systems" count="01 / 04" />
+      <SectionHeader label="ABOUT" title="Engineering-first, product-minded" count="01 / 04" />
 
       <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
         <div className="dp-panel rounded-[32px] p-6">
@@ -26,13 +26,16 @@ export default function AboutPage() {
           </div>
 
           <p className="mt-6 text-sm leading-7 text-dp-text-secondary">{profile.summary}</p>
+          <p className="mt-3 text-sm leading-7 text-dp-text-secondary">
+            Also known as Sahil Nawab for search consistency across LinkedIn, GitHub, and portfolio indexing.
+          </p>
 
           <div className="mt-6 grid grid-cols-2 gap-3 text-sm">
             {[
               ["Location", profile.location],
-              ["Focus", "WordPress / PHP / SEO"],
-              ["Stack", "Java / ASP.NET / DevOps"],
-              ["Mode", "Shipping"],
+              ["Focus", "Full-stack + DevOps delivery"],
+              ["Stack", "Next.js / TypeScript / Docker"],
+              ["Mode", "Production-oriented"],
             ].map(([label, value]) => (
               <div key={label} className="rounded-2xl border border-dp-border-secondary bg-dp-bg-3 px-4 py-3">
                 <div className="font-mono text-[10px] tracking-[0.28em] text-dp-text-secondary">{label}</div>

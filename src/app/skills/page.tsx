@@ -3,8 +3,8 @@ import SkillGroup from "@/components/skills/SkillGroup";
 import { skills } from "@/data/portfolio";
 
 export const metadata = {
-  title: 'Skills — Nawab Sahil | WordPress, PHP, Java, SEO & DevOps',
-  description: 'Skills of Nawab Sahil from Jamnagar: WordPress, PHP, Java, ASP.NET, SEO, Google Ads, MySQL, SQL Server, Docker, and modern web development.',
+  title: 'Skills | Nawab Sahil | Full-Stack Engineering, Data, and DevOps',
+  description: 'Technical skills of Nawab Sahil across Next.js, React, TypeScript, PHP, Java, PostgreSQL, MongoDB, Docker, GitHub Actions, WordPress architecture, and technical SEO.',
 };
 
 export default function SkillsPage() {

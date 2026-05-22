@@ -57,9 +57,9 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
             Live Demo
           </Link>
         ) : null}
-        <span className="inline-flex items-center rounded-[4px] border border-[#3a3324] px-3 py-2 text-dp-text-secondary transition hover:border-dp-orange hover:text-dp-orange">
+        <Link href={`/projects/${project.slug}`} className="inline-flex items-center rounded-[4px] border border-[#3a3324] px-3 py-2 text-dp-text-secondary transition hover:border-dp-orange hover:text-dp-orange">
           Details <ArrowUpRight size={14} />
-        </span>
+        </Link>
       </div>
     </motion.article>
   );

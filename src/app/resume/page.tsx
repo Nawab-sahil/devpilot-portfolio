@@ -5,8 +5,8 @@ import Timeline from "@/components/common/Timeline";
 import { timeline, profile, education, projects, skills } from "@/data/portfolio";
 
 export const metadata = {
-  title: 'Resume — Sahil — WordPress, PHP, Java & SEO',
-  description: 'Resume of Nawab Sahil, an MCA student at DDU Nadiad building WordPress, PHP, Java, ASP.NET and SEO-friendly web applications.',
+  title: 'Resume | Nawab Sahil | Software Engineer and DevOps-Oriented Builder',
+  description: 'Resume of Nawab Sahil, MCA candidate at Dharmsinh Desai University with full-stack development experience in Next.js, TypeScript, PHP, Java, Docker, CI/CD, and technical SEO.',
 };
 
 export default function ResumePage() {
@@ -32,8 +32,8 @@ export default function ResumePage() {
 
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
               <div className="rounded-2xl border border-dp-border-secondary bg-dp-bg-3 px-4 py-3 text-sm text-dp-text-secondary"><MapPin size={16} className="mr-2 inline-block text-dp-amber" />{profile.location}</div>
-              <div className="rounded-2xl border border-dp-border-secondary bg-dp-bg-3 px-4 py-3 text-sm text-dp-text-secondary"><BriefcaseBusiness size={16} className="mr-2 inline-block text-dp-teal" /> SEO-first client delivery</div>
-              <div className="rounded-2xl border border-dp-border-secondary bg-dp-bg-3 px-4 py-3 text-sm text-dp-text-secondary"><Github size={16} className="mr-2 inline-block text-dp-lime" /> GitHub-ready projects</div>
+              <div className="rounded-2xl border border-dp-border-secondary bg-dp-bg-3 px-4 py-3 text-sm text-dp-text-secondary"><BriefcaseBusiness size={16} className="mr-2 inline-block text-dp-teal" /> Full-stack product delivery</div>
+              <div className="rounded-2xl border border-dp-border-secondary bg-dp-bg-3 px-4 py-3 text-sm text-dp-text-secondary"><Github size={16} className="mr-2 inline-block text-dp-lime" /> CI/CD and deployment workflow focus</div>
               <div className="rounded-2xl border border-dp-border-secondary bg-dp-bg-3 px-4 py-3 text-sm text-dp-text-secondary"><Linkedin size={16} className="mr-2 inline-block text-dp-teal" /> Open to connect</div>
             </div>
           </div>
@@ -88,7 +88,7 @@ export default function ResumePage() {
           <div className="font-mono text-[11px] tracking-[0.34em] text-dp-text-secondary">DOWNLOAD</div>
           <h2 className="mt-3 text-3xl font-semibold text-dp-text-primary">One-page resume</h2>
           <p className="mt-4 text-sm leading-7 text-dp-text-secondary">
-            Clean summary of WordPress, PHP, Java, ASP.NET, SEO, and DevOps-focused delivery work.
+            Concise profile of engineering work across Next.js, TypeScript, PHP, Java, Docker, CI/CD, and production-oriented delivery.
           </p>
           <Link
             href="/resume.pdf"

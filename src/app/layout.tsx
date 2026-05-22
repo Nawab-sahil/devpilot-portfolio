@@ -18,21 +18,41 @@ const jetbrains = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Nawab Sahil — WordPress Expert, PHP & Java Developer',
-  description: 'Portfolio of Nawab Sahil from Jamnagar, Gujarat. MCA at DDU Nadiad, BCA at Saurashtra University, building SEO-friendly WordPress, PHP, Java, ASP.NET, and DevOps projects.',
+  title: 'Nawab Sahil (Sahil Nawab) | Software Engineer | Next.js, TypeScript, Docker, DevOps',
+  description: 'Portfolio of Nawab Sahil, also known as Sahil Nawab, software engineer from Jamnagar, Gujarat. MCA candidate at Dharmsinh Desai University building production-ready applications with Next.js, TypeScript, Docker, PostgreSQL, GitHub Actions, PHP, and WordPress.',
    verification: {
     google: "NHWTrZcjhlSm7JjfH_ba5644DxjlJOaDuSVn0NahgGA",
   },
-  keywords: ['Nawab Sahil', 'WordPress Expert', 'PHP Developer', 'Java Developer', 'ASP.NET', 'SEO', 'Jamnagar', 'Gujarat', 'MCA', 'Saurashtra University'],
+  keywords: [
+    'Nawab Sahil',
+    'Software Engineer India',
+    'Next.js Developer',
+    'TypeScript Engineer',
+    'Docker Developer',
+    'CI/CD Pipeline',
+    'GitHub Actions',
+    'PostgreSQL Developer',
+    'MERN Stack Engineer',
+    'PHP Developer',
+    'WordPress Developer',
+    'Java Developer',
+    'Technical SEO',
+    'DevOps Automation',
+    'Developer Tooling',
+    'Dharmsinh Desai University',
+    'Saurashtra University'
+  ],
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://nawabsahil.vercel.app',
-    siteName: 'Nawab Sahil — Portfolio',
+    siteName: 'Nawab Sahil | Engineering Portfolio',
+    title: 'Nawab Sahil (Sahil Nawab) | Software Engineer | Next.js, TypeScript, Docker, DevOps',
+    description: 'Nawab Sahil, also known as Sahil Nawab, is a production-focused software engineer building full-stack web applications, deployment workflows, and developer tooling.',
     images: [
       {
         url: 'https://nawabsahil.vercel.app',
-        alt: 'Nawab Sahil — WordPress Expert and Full Stack Developer',
+        alt: 'Nawab Sahil - Software Engineer Portfolio',
       },
     ],
   },
@@ -41,8 +61,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nawab Sahil — WordPress Expert & PHP Developer',
-    description: 'SEO-first WordPress, PHP, Java, ASP.NET, and DevOps projects from Jamnagar, Gujarat.',
+    title: 'Nawab Sahil (Sahil Nawab) | Software Engineer',
+    description: 'Building production-grade web systems with Next.js, TypeScript, Docker, CI/CD, and technical SEO.',
   },
   robots: {
     index: true,
@@ -59,11 +79,12 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Nawab Sahil",
+    alternateName: ["Sahil Nawab"],
     url: "https://nawabsahil.vercel.app",
     image: "https://nawabsahil.vercel.app",
-    jobTitle: "WordPress Expert & Full-Stack Developer",
-    alumniOf: "DDU Nadiad",
-    knowsAbout: ["WordPress", "PHP", "Java", "ASP.NET", "SEO", "DevOps", "Google Ads"],
+    jobTitle: "Software Engineer",
+    alumniOf: ["Dharmsinh Desai University", "Saurashtra University"],
+    knowsAbout: ["Next.js", "React", "TypeScript", "Docker", "PostgreSQL", "GitHub Actions", "PHP", "WordPress", "Java", "Technical SEO", "DevOps"],
     address: {
       "@type": "PostalAddress",
       addressLocality: "Jamnagar",
@@ -72,10 +93,10 @@ export default function RootLayout({
     },
     sameAs: [
       "https://github.com/Nawab-sahil/",
-      "https://leetcode.com/u/nawabsahil",
+      "https://leetcode.com/u/nawabsahil/",
       "https://www.linkedin.com/in/sahil-nawab"
     ],
-    description: "WordPress Expert and Full Stack Developer from Jamnagar, Gujarat. MCA at DDU Nadiad with a BCA foundation from Saurashtra University.",
+    description: "Software engineer from Jamnagar, Gujarat building full-stack web applications with deployment-ready workflows, technical SEO, and developer tooling.",
   };
 
   return (

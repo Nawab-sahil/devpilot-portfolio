@@ -9,7 +9,7 @@ import SectionHeader from "@/components/common/SectionHeader";
 import SkillGroup from "@/components/skills/SkillGroup";
 import Timeline from "@/components/common/Timeline";
 import ProjectGrid from "@/components/sections/ProjectGrid";
-import { skills, timeline, profile } from "@/data/portfolio";
+import { skills, timeline, profile, projects } from "@/data/portfolio";
 
 export default function Home() {
   return (
@@ -25,7 +25,7 @@ export default function Home() {
             <span aria-hidden="true">/</span> PROJECTS
           </span>
           <div className="h-px flex-1 bg-dp-border-primary" />
-          <span className="font-mono text-[11px] text-dp-text-dark">06 total</span>
+          <span className="font-mono text-[11px] text-dp-text-dark">{projects.length.toString().padStart(2, "0")} total</span>
         </div>
         <ProjectGrid compact showFooterCta />
       </section>
@@ -64,7 +64,7 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-3 rounded-xl border border-dp-border-secondary bg-dp-bg-3 px-4 py-3 text-sm text-dp-teal">
                 <BriefcaseBusiness size={16} className="text-dp-teal" />
-                WordPress · PHP · Java · SEO
+                Full-stack delivery · Deployment workflows · Technical SEO
               </div>
             </div>
 
@@ -100,10 +100,41 @@ export default function Home() {
         <SkillGroup categories={skills} />
       </section>
 
+      <section id="building" className="mx-auto scroll-mt-[72px] max-w-7xl border-t border-dp-border-primary px-4 py-10 sm:px-6 lg:px-8">
+        <SectionHeader label="BUILDING" title="What I am building now" count="STACKFORGE DIRECTION" />
+
+        <div className="grid gap-4 md:grid-cols-2">
+          {[
+            {
+              title: "Dockerized Project Starters",
+              detail: "Template-first local environments for faster onboarding and cleaner team setup.",
+            },
+            {
+              title: "CI/CD Baselines",
+              detail: "GitHub Actions pipelines with quality checks and deployment-ready release paths.",
+            },
+            {
+              title: "Developer Workflow Tooling",
+              detail: "Automation scripts and configuration layers that reduce repeated setup work.",
+            },
+            {
+              title: "Production Delivery Habits",
+              detail: "Shipping features with deployment, reliability, and maintainability considered from day one.",
+            },
+          ].map((item) => (
+            <div key={item.title} className="dp-panel rounded-[20px] p-5">
+              <div className="font-mono text-[11px] tracking-[0.28em] text-dp-orange">IN PROGRESS</div>
+              <h3 className="mt-2 text-xl font-semibold text-dp-text-primary">{item.title}</h3>
+              <p className="mt-2 text-sm leading-7 text-dp-text-secondary">{item.detail}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       
 
       <section id="contact" className="mx-auto scroll-mt-[72px] max-w-7xl border-t border-dp-border-primary px-4 py-10 sm:px-6 lg:px-8">
-        <SectionHeader label="CONTACT" title="Build something search-friendly" count="LET&apos;S TALK" />
+        <SectionHeader label="CONTACT" title="Build and ship with confidence" count="LET&apos;S TALK" />
 
         <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
           <motion.form
@@ -149,9 +180,9 @@ export default function Home() {
           >
             <motion.div whileHover={{ scale: 1.01 }} className="dp-panel rounded-[24px] p-6">
               <div className="font-mono text-[11px] tracking-[0.34em] text-dp-text-secondary">REACH OUT</div>
-              <h2 className="mt-3 text-2xl font-semibold text-dp-text-primary">Build. Rank. Convert.</h2>
+              <h2 className="mt-3 text-2xl font-semibold text-dp-text-primary">Engineering + delivery mindset</h2>
               <div className="mt-4 space-y-3 text-sm text-dp-text-secondary">
-                <motion.div whileHover={{ scale: 1.01 }} className="flex items-center gap-3 rounded-2xl border border-dp-border-secondary bg-dp-bg-3 px-4 py-3"><Mail size={16} className="text-dp-lime" /> SEO-friendly web apps, taxi brands, and client sites</motion.div>
+                <motion.div whileHover={{ scale: 1.01 }} className="flex items-center gap-3 rounded-2xl border border-dp-border-secondary bg-dp-bg-3 px-4 py-3"><Mail size={16} className="text-dp-lime" /> Product builds, platform migrations, and deployment-oriented web systems</motion.div>
                 <motion.div whileHover={{ scale: 1.01 }} className="flex items-center gap-3 rounded-2xl border border-dp-border-secondary bg-dp-bg-3 px-4 py-3">
                   <Linkedin size={16} className="text-dp-teal" />
                   <a href="https://www.linkedin.com/in/sahil-nawab" target="_blank" rel="noreferrer" className="text-dp-text-secondary hover:text-dp-text-primary">linkedin.com/in/sahil-nawab</a>
@@ -172,7 +203,7 @@ export default function Home() {
                 <span className="mt-1 inline-block h-3 w-3 rounded-full bg-dp-teal" />
                 <div>
                   <div className="font-mono text-sm font-semibold text-dp-teal">Open to Work</div>
-                  <div className="mt-1 text-sm text-dp-text-secondary">Available for WordPress, PHP, Java, ASP.NET, SEO, and DevOps-focused client work.</div>
+                  <div className="mt-1 text-sm text-dp-text-secondary">Available for software engineering roles and freelance engagements spanning full-stack delivery and DevOps workflows.</div>
                 </div>
               </div>
             </motion.div>
@@ -193,8 +224,8 @@ export default function Home() {
             <div className="inline-flex items-center gap-2 rounded-full bg-dp-bg-3 px-3 py-1 text-sm text-dp-teal mb-4">
               <span className="inline-block h-2 w-2 rounded-full bg-dp-teal" /> Available for work
             </div>
-            <h3 className="text-3xl font-semibold text-dp-text-primary">Let&apos;s build something great.</h3>
-            <p className="mt-2 text-sm text-dp-text-secondary">Remote roles · Freelance · SEO-first client work · Product builds</p>
+            <h3 className="text-3xl font-semibold text-dp-text-primary">Building software is easy. Shipping reliably is engineering.</h3>
+            <p className="mt-2 text-sm text-dp-text-secondary">Remote roles · Product engineering · Platform and automation work</p>
             <div className="mt-6 flex items-center justify-center gap-4">
               <motion.a whileHover={{ scale: 1.03 }} href="#contact" className="rounded-xl border border-dp-border-secondary bg-dp-bg-2 px-6 py-2 font-mono text-sm font-semibold text-dp-text-primary transition-colors hover:border-dp-lime hover:text-dp-lime">Get In Touch</motion.a>
               <motion.div whileHover={{ scale: 1.03 }} className="rounded-xl border border-dp-border-secondary bg-dp-bg-2 px-6 py-2 font-mono text-sm font-semibold text-dp-text-primary transition-colors hover:border-dp-lime hover:text-dp-lime">

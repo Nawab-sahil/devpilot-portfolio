@@ -146,6 +146,22 @@ body {
   color: transparent;
 }
 
+.dp-breadcrumb {
+  @apply inline-flex flex-wrap items-center gap-2 rounded-full border border-dp-border-secondary bg-dp-bg-3 px-3 py-1.5;
+}
+
+.dp-breadcrumb-link {
+  @apply text-dp-text-secondary transition-colors duration-200 hover:text-dp-lime;
+}
+
+.dp-breadcrumb-separator {
+  @apply text-dp-text-dark;
+}
+
+.dp-breadcrumb-current {
+  @apply text-dp-text-primary;
+}
+
 .letter-spacing-2 {
   letter-spacing: 2px;
 }
