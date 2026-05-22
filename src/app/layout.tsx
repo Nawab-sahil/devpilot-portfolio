@@ -20,6 +20,9 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   title: 'Nawab Sahil — WordPress Expert, PHP & Java Developer',
   description: 'Portfolio of Nawab Sahil from Jamnagar, Gujarat. MCA at DDU Nadiad, BCA at Saurashtra University, building SEO-friendly WordPress, PHP, Java, ASP.NET, and DevOps projects.',
+   verification: {
+    google: "NHWTrZcjhlSm7JjfH_ba5644DxjlJOaDuSVn0NahgGA",
+  },
   keywords: ['Nawab Sahil', 'WordPress Expert', 'PHP Developer', 'Java Developer', 'ASP.NET', 'SEO', 'Jamnagar', 'Gujarat', 'MCA', 'Saurashtra University'],
   openGraph: {
     type: 'website',
@@ -69,7 +72,7 @@ export default function RootLayout({
     },
     sameAs: [
       "https://github.com/Nawab-sahil/",
-      "https://leetcode.com/u/nawabsahil/",
+      "https://leetcode.com/u/nawabsahil",
       "https://www.linkedin.com/in/sahil-nawab"
     ],
     description: "WordPress Expert and Full Stack Developer from Jamnagar, Gujarat. MCA at DDU Nadiad with a BCA foundation from Saurashtra University.",
@@ -78,7 +81,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${jetbrains.variable}`}>
       <head>
-        <link rel="canonical" href="https://nawabsahil.vercel.app/" />
+        <link rel="canonical" href="https://nawabsahil.vercel.app" />
         <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger
