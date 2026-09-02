@@ -59,6 +59,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://nawabsahil.vercel.app',
   },
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
   twitter: {
     card: 'summary_large_image',
     title: 'Nawab Sahil (Sahil Nawab) | Software Engineer',
